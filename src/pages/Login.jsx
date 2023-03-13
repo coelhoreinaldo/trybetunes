@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import Loading from '../components/Loading';
 import { createUser } from '../services/userAPI';
 
 class Login extends Component {
   state = {
     userName: '',
     isDisabled: true,
+    loading: false,
+    logado: false,
   };
 
   handleChange = ({ target }) => {
@@ -24,8 +28,14 @@ class Login extends Component {
     }
   };
 
+  loginBtn = async (user) => {
+    this.setState({ loading: true });
+    await createUser(user);
+    this.setState({ loading: false, logado: true });
+  };
+
   render() {
-    const { isDisabled, userName } = this.state;
+    const { isDisabled, userName, loading, logado } = this.state;
     const user = { name: userName };
     return (
       <div data-testid="page-login">
@@ -45,11 +55,13 @@ class Login extends Component {
             type="button"
             disabled={ isDisabled }
             data-testid="login-submit-button"
-            onClick={ () => createUser(user) }
+            onClick={ () => this.loginBtn(user) }
           >
             Entrar
 
           </button>
+          {loading && <Loading />}
+          {logado && <Redirect to="/search" /> }
         </form>
       </div>
     );
