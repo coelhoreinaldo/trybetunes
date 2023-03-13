@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { createUser } from '../services/userAPI';
 
 class Login extends Component {
   state = {
@@ -25,6 +26,7 @@ class Login extends Component {
 
   render() {
     const { isDisabled, userName } = this.state;
+    const user = { name: userName };
     return (
       <div data-testid="page-login">
         <h1>Login</h1>
@@ -40,8 +42,10 @@ class Login extends Component {
             />
           </label>
           <button
+            type="button"
             disabled={ isDisabled }
             data-testid="login-submit-button"
+            onClick={ () => createUser(user) }
           >
             Entrar
 
