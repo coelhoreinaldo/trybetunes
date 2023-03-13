@@ -1,11 +1,49 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import Loading from '../components/Loading';
+import { createUser } from '../services/userAPI';
 
 class Login extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      userName: '',
+      isLoginBtnDisabled: true,
+      loading: false,
+      logged: false,
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange = ({ target }) => {
+    const { name, value } = target;
+    this.setState({
+      [name]: value,
+    }, this.validateFields);
+  };
+
+  validateFields = () => {
+    const { userName } = this.state;
+    const MIN_USERNAME_LENGTH = 3;
+    const userNameLength = userName.length >= MIN_USERNAME_LENGTH;
+    if (userNameLength) {
+      this.setState({ isLoginBtnDisabled: false });
+    } else {
+      this.setState({ isLoginBtnDisabled: true });
+    }
+  };
+
+  loginBtn = async (user) => {
+    this.setState({ loading: true });
+    await createUser(user);
+    this.setState({ loading: false, logged: true });
+  };
+
   render() {
-    const { userName, loading, logged, isDisabled, handleChange, loginBtn } = this.props;
+    const { userName, isLoginBtnDisabled, loading, logged } = this.state;
+    const user = { name: userName };
     return (
       <div data-testid="page-login">
         <h1>Login</h1>
@@ -17,14 +55,14 @@ class Login extends Component {
               value={ userName }
               type="text"
               data-testid="login-name-input"
-              onChange={ handleChange }
+              onChange={ this.handleChange }
             />
           </label>
           <button
             type="button"
-            disabled={ isDisabled }
+            disabled={ isLoginBtnDisabled }
             data-testid="login-submit-button"
-            onClick={ loginBtn }
+            onClick={ () => this.loginBtn(user) }
           >
             Entrar
 
@@ -37,13 +75,13 @@ class Login extends Component {
   }
 }
 
-Login.propTypes = {
-  userName: PropTypes.string.isRequired,
-  loading: PropTypes.bool.isRequired,
-  logged: PropTypes.bool.isRequired,
-  isDisabled: PropTypes.bool.isRequired,
-  handleChange: PropTypes.func.isRequired,
-  loginBtn: PropTypes.func.isRequired,
-};
+// Login.propTypes = {
+//   // userName: PropTypes.string.isRequired,
+//   // loading: PropTypes.bool.isRequired,
+//   // logged: PropTypes.bool.isRequired,
+//   // isDisabled: PropTypes.bool.isRequired,
+//   // handleChange: PropTypes.func.isRequired,
+//   // loginBtn: PropTypes.func.isRequired,
+// };
 
 export default Login;
