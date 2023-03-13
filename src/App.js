@@ -8,6 +8,7 @@ import NotFound from './pages/NotFound';
 import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import Search from './pages/Search';
+import searchAlbumsAPI from './services/searchAlbumsAPI';
 import { createUser } from './services/userAPI';
 
 class App extends React.Component {
@@ -20,6 +21,7 @@ class App extends React.Component {
       logged: false,
       isDisabled: true,
       searchArtistInput: '',
+      searchResult: [],
     };
   }
 
@@ -49,8 +51,19 @@ class App extends React.Component {
     }
   };
 
+  searchArtistBtn = async () => {
+    const { searchArtistInput } = this.state;
+    this.setState({ loading: true });
+    const response = await searchAlbumsAPI(searchArtistInput);
+    this.setState({
+      // searchArtistInput: '',
+      loading: false,
+      searchResult: response });
+  };
+
   render() {
-    const { userName, loading, logged, isDisabled, searchArtistInput } = this.state;
+    const { userName, loading, logged, isDisabled,
+      searchArtistInput, searchResult } = this.state;
     const user = { name: userName };
 
     return (
@@ -70,6 +83,9 @@ class App extends React.Component {
                 handleChange={ this.handleChange }
                 isDisabled={ isDisabled }
                 searchArtistInput={ searchArtistInput }
+                searchArtistBtn={ this.searchArtistBtn }
+                loading={ loading }
+                searchResult={ searchResult }
               />) }
             />
             <Route
