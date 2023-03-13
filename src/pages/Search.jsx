@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Loading from '../components/Loading';
 import RenderizeAlbum from '../components/RenderizeAlbum';
+import Header from '../components/Header';
 
 class Search extends Component {
   render() {
@@ -11,6 +12,7 @@ class Search extends Component {
     const NOT_FOUND = 'Nenhum álbum foi encontrado';
     return (
       <div data-testid="page-search">
+        <Header />
         <form>
           <label>
             <input
