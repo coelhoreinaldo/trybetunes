@@ -19,6 +19,7 @@ class App extends React.Component {
       loading: false,
       logged: false,
       isDisabled: true,
+      searchArtistInput: '',
     };
   }
 
@@ -36,9 +37,12 @@ class App extends React.Component {
   };
 
   validateFields = () => {
-    const { userName } = this.state;
+    const { userName, searchArtistInput } = this.state;
     const MIN_USERNAME_LENGTH = 3;
-    if (userName.length >= MIN_USERNAME_LENGTH) {
+    const MIN_ARTIST_LENGTH = 2;
+    const userNameLength = userName.length >= MIN_USERNAME_LENGTH;
+    const searchArtistLength = searchArtistInput.length >= MIN_ARTIST_LENGTH;
+    if (userNameLength || searchArtistLength) {
       this.setState({ isDisabled: false });
     } else {
       this.setState({ isDisabled: true });
@@ -46,7 +50,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { userName, loading, logged, isDisabled } = this.state;
+    const { userName, loading, logged, isDisabled, searchArtistInput } = this.state;
     const user = { name: userName };
 
     return (
@@ -54,11 +58,20 @@ class App extends React.Component {
         <BrowserRouter>
           <Header />
           <Switch>
-            <Route exact path="/search" component={ Search } />
             <Route exact path="/album/:id" component={ Album } />
             <Route exact path="/favorites" component={ Favorites } />
             <Route exact path="/profile" component={ Profile } />
             <Route exact path="/profile/edit" component={ ProfileEdit } />
+            <Route
+              exact
+              path="/search"
+              render={ (props) => (<Search
+                { ...props }
+                handleChange={ this.handleChange }
+                isDisabled={ isDisabled }
+                searchArtistInput={ searchArtistInput }
+              />) }
+            />
             <Route
               exact
               path="/"
