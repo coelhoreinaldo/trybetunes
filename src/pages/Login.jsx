@@ -5,7 +5,7 @@ import Loading from '../components/Loading';
 
 class Login extends Component {
   render() {
-    const { userName, loading, logado, isDisabled, handleChange, loginBtn } = this.props;
+    const { userName, loading, logged, isDisabled, handleChange, loginBtn } = this.props;
     return (
       <div data-testid="page-login">
         <h1>Login</h1>
@@ -30,7 +30,7 @@ class Login extends Component {
 
           </button>
           {loading && <Loading />}
-          {logado && <Redirect to="/search" /> }
+          {logged && <Redirect to="/search" /> }
         </form>
       </div>
     );
@@ -40,7 +40,7 @@ class Login extends Component {
 Login.propTypes = {
   userName: PropTypes.string.isRequired,
   loading: PropTypes.bool.isRequired,
-  logado: PropTypes.bool.isRequired,
+  logged: PropTypes.bool.isRequired,
   isDisabled: PropTypes.bool.isRequired,
   handleChange: PropTypes.func.isRequired,
   loginBtn: PropTypes.func.isRequired,

@@ -17,7 +17,7 @@ class App extends React.Component {
     this.state = {
       userName: '',
       loading: false,
-      logado: false,
+      logged: false,
       isDisabled: true,
     };
   }
@@ -32,7 +32,7 @@ class App extends React.Component {
   loginBtn = async (user) => {
     this.setState({ loading: true });
     await createUser(user);
-    this.setState({ loading: false, logado: true });
+    this.setState({ loading: false, logged: true });
   };
 
   validateFields = () => {
@@ -46,7 +46,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { userName, loading, logado, isDisabled } = this.state;
+    const { userName, loading, logged, isDisabled } = this.state;
     const user = { name: userName };
 
     return (
@@ -66,7 +66,7 @@ class App extends React.Component {
                 { ...props }
                 userName={ userName }
                 loading={ loading }
-                logado={ logado }
+                logged={ logged }
                 loginBtn={ () => this.loginBtn(user) }
                 handleChange={ this.handleChange }
                 isDisabled={ isDisabled }
