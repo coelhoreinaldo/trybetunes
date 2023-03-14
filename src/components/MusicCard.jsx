@@ -4,18 +4,17 @@ import { addSong } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
 
 class MusicCard extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       loading: false,
-      isFavorite: false,
+      isFavorite: props.alreadyFavorite || false,
     };
   }
 
   handleChangeFavorite = ({ target }) => {
-    const { name } = target;
-    const value = target.checked;
-    this.setState({ [name]: value });
+    const { name, checked } = target;
+    this.setState({ [name]: checked });
   };
 
   handleClickFetchApi = async (song) => {
@@ -26,7 +25,8 @@ class MusicCard extends Component {
 
   render() {
     const { loading, isFavorite } = this.state;
-    const { song, alreadyFavorite } = this.props;
+    const { alreadyFavorite } = this.props;
+    const { song } = this.props;
     const { trackName, previewUrl, trackId } = song;
     return (
       <div>
@@ -43,8 +43,7 @@ class MusicCard extends Component {
             data-testid={ `checkbox-music-${trackId}` }
             type="checkbox"
             name="isFavorite"
-            value={ isFavorite }
-            checked={ alreadyFavorite }
+            checked={ alreadyFavorite || isFavorite }
             onChange={ this.handleChangeFavorite }
             onClick={ () => this.handleClickFetchApi(song) }
           />
