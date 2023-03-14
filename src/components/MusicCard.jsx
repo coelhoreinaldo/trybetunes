@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, removeSong } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
 
 class MusicCard extends Component {
@@ -18,8 +18,15 @@ class MusicCard extends Component {
   };
 
   handleClickFetchApi = async (song) => {
+    const { alreadyFavorite } = this.props;
     this.setState({ loading: true });
-    await addSong(song);
+    if (!alreadyFavorite) {
+      await addSong(song);
+    } else {
+      await removeSong(song);
+      this.setState({ isFavorite: false });
+    }
+    console.log(song);
     this.setState({ loading: false });
   };
 
