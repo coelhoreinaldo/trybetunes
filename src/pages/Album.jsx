@@ -25,11 +25,9 @@ class Album extends Component {
   }
 
   getSavedFavoriteSongs = async () => {
-    // const { favoriteSongs } = this.state;
     this.setState({ loading: true });
     const response = await getFavoriteSongs();
     this.setState({ loading: false, favoriteSongs: response });
-    // console.log('favorite songs: ', favoriteSongs, 'allSongs', this.state.songs);
   };
 
   fetchMusicApi = async () => {
@@ -65,7 +63,6 @@ class Album extends Component {
                   .some((favoriteSong) => favoriteSong.trackId === song.trackId) }
               />))
           }
-          <h1>{console.log('favoriteSongs', favoriteSongs, 'songs', songs)}</h1>
         </section>
         {loading && <Loading />}
       </div>
