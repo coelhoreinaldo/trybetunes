@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
+import MusicCard from '../components/MusicCard';
 // import RenderizeAlbum from '../components/RenderizeAlbum';
 
 class Album extends Component {
@@ -31,7 +32,7 @@ class Album extends Component {
       collectionName: response[0].collectionName,
       // songs: onlySongs,
     });
-    response.shift();
+    // const onlySongs = response.shift();
     this.setState({
       songs: response,
     });
@@ -46,9 +47,8 @@ class Album extends Component {
         <h2 data-testid="album-name">{collectionName}</h2>
         <section>
           {
-            songs.map((song) => (
-              <div key={ song.trackId } />
-            ))
+            songs.filter((_song, index) => index !== 0)
+              .map((song) => <MusicCard key={ song.trackId } song={ song } />)
           }
         </section>
       </div>
