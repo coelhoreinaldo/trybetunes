@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
-// import RenderizeAlbum from '../components/RenderizeAlbum';
 
 class Album extends Component {
   constructor() {
@@ -30,9 +29,7 @@ class Album extends Component {
     this.setState({
       artistName: response[0].artistName,
       collectionName: response[0].collectionName,
-      // songs: onlySongs,
     });
-    // const onlySongs = response.shift();
     this.setState({
       songs: response,
     });

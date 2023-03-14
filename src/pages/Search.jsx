@@ -93,22 +93,4 @@ class Search extends Component {
   }
 }
 
-// Search.propTypes = {
-//   searchResult: PropTypes.arrayOf(PropTypes.shape({
-//     artistId: PropTypes.number.isRequired,
-//     artistName: PropTypes.string.isRequired,
-//     collectionId: PropTypes.number.isRequired,
-//     collectionName: PropTypes.string.isRequired,
-//     collectionPrice: PropTypes.number.isRequired,
-//     artworkUrl100: PropTypes.string.isRequired,
-//     releaseDate: PropTypes.string.isRequired,
-//     trackCount: PropTypes.number.isRequired,
-//   })).isRequired,
-//   handleChange: PropTypes.func.isRequired,
-//   isDisabled: PropTypes.bool.isRequired,
-//   searchArtistInput: PropTypes.string.isRequired,
-//   searchArtistBtn: PropTypes.func.isRequired,
-//   loading: PropTypes.bool.isRequired,
-// };
-
 export default Search;
