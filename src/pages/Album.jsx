@@ -45,7 +45,7 @@ class Album extends Component {
   };
 
   render() {
-    const { songs, artistName, collectionName, loading, favoriteSongs } = this.state;
+    const { songs, artistName, collectionName, loading } = this.state;
     return (
       <div data-testid="page-album">
         <Header />
@@ -56,8 +56,6 @@ class Album extends Component {
             songs.map((song) => (<MusicCard
               key={ song.trackId }
               song={ song }
-              alreadyFavorite={ favoriteSongs
-                .some((favoriteSong) => favoriteSong.trackId === song.trackId) }
             />))
           }
         </section>
