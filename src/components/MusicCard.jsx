@@ -12,11 +12,13 @@ class MusicCard extends Component {
     };
   }
 
-  handleChangeFavorite = async (song) => {
-  // handleChangeFavorite = async ( { target }, song) => {
-    // const { name } = target;
-    // const value = target.type === 'checkbox' ? target.checked : target.value;
-    // this.setState({ [name]: value, loading: true });
+  handleChangeFavorite = ({ target }) => {
+    const { name } = target;
+    const value = target.checked;
+    this.setState({ [name]: value });
+  };
+
+  handleClickFetchApi = async (song) => {
     this.setState({ loading: true });
     await addSong(song);
     this.setState({ loading: false });
@@ -32,8 +34,6 @@ class MusicCard extends Component {
         <audio data-testid="audio-component" src={ previewUrl } controls>
           <track kind="captions" />
           O seu navegador não suporta o elemento
-          {' '}
-          {' '}
           <code>audio</code>
           .
         </audio>
@@ -45,7 +45,8 @@ class MusicCard extends Component {
             name="isFavorite"
             value={ isFavorite }
             checked={ alreadyFavorite }
-            onChange={ () => this.handleChangeFavorite(song) }
+            onChange={ this.handleChangeFavorite }
+            onClick={ () => this.handleClickFetchApi(song) }
           />
         </label>
         { loading && <Loading />}

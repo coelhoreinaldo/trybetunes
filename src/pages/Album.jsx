@@ -40,8 +40,6 @@ class Album extends Component {
     this.setState({
       artistName: response[0].artistName,
       collectionName: response[0].collectionName,
-    });
-    this.setState({
       songs: response,
     });
   };
