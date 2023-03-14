@@ -14,7 +14,6 @@ class Album extends Component {
       artistName: '',
       collectionName: '',
       songs: [],
-      favoriteSongs: [],
       loading: false,
     };
   }
@@ -26,8 +25,8 @@ class Album extends Component {
 
   getSavedFavoriteSongs = async () => {
     this.setState({ loading: true });
-    const response = await getFavoriteSongs();
-    this.setState({ loading: false, favoriteSongs: response });
+    await getFavoriteSongs();
+    this.setState({ loading: false });
   };
 
   fetchMusicApi = async () => {
