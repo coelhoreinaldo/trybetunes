@@ -40,7 +40,7 @@ class Album extends Component {
     this.setState({
       artistName: response[0].artistName,
       collectionName: response[0].collectionName,
-      songs: response,
+      songs: response.filter((_song, index) => index !== 0),
     });
   };
 
@@ -53,13 +53,12 @@ class Album extends Component {
         <h2 data-testid="album-name">{collectionName}</h2>
         <section>
           {
-            songs.filter((_song, index) => index !== 0)
-              .map((song) => (<MusicCard
-                key={ song.trackId }
-                song={ song }
-                alreadyFavorite={ favoriteSongs
-                  .some((favoriteSong) => favoriteSong.trackId === song.trackId) }
-              />))
+            songs.map((song) => (<MusicCard
+              key={ song.trackId }
+              song={ song }
+              alreadyFavorite={ favoriteSongs
+                .some((favoriteSong) => favoriteSong.trackId === song.trackId) }
+            />))
           }
         </section>
         {loading && <Loading />}

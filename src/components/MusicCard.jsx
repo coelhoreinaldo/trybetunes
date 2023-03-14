@@ -8,27 +8,43 @@ class MusicCard extends Component {
     super(props);
     this.state = {
       loading: false,
-      isFavorite: props.alreadyFavorite || false,
+      isFavorite: false,
     };
   }
 
-  handleChangeFavorite = ({ target }) => {
-    const { name, checked } = target;
-    this.setState({ [name]: checked });
-  };
-
-  handleClickFetchApi = async (song) => {
+  handleChangeFavorite = async (song) => {
     const { alreadyFavorite } = this.props;
+    const { isFavorite } = this.state;
     this.setState({ loading: true });
-    if (!alreadyFavorite) {
-      await addSong(song);
-    } else {
+    if (isFavorite || alreadyFavorite) {
+      this.setState({ isFavorite: 'checked' });
       await removeSong(song);
-      this.setState({ isFavorite: false });
+    } else {
+      await addSong(song);
+      this.setState({ isFavorite: 'checked' });
     }
-    console.log(song);
     this.setState({ loading: false });
   };
+
+  // handleChangeFavorite = async (song) => { essa função funciona para quase todosdo requisito 11
+  //   const { alreadyFavorite } = this.props;
+  //   const { isFavorite } = this.state;
+  //   this.setState({ loading: true });
+  //   const favSongs = await getFavoriteSongs();
+  //   if (favSongs.some((favoriteSong) => favoriteSong.trackId === song.trackId)) {
+  //     this.setState({ isFavorite: false });
+  //     await removeSong(song);
+  //   } else {
+  //     this.setState({ isFavorite: true });
+  //     await addSong(song);
+  //     return;
+  //   }
+  //   this.setState({ loading: false });
+  // };
+
+  // handleClickFetchApi = async (song) => { ficava aqui as requisições às apis
+  //   await addSong(song);
+  // };
 
   render() {
     const { loading, isFavorite } = this.state;
@@ -50,12 +66,11 @@ class MusicCard extends Component {
             data-testid={ `checkbox-music-${trackId}` }
             type="checkbox"
             name="isFavorite"
+            onChange={ () => this.handleChangeFavorite(song) }
             checked={ alreadyFavorite || isFavorite }
-            onChange={ this.handleChangeFavorite }
-            onClick={ () => this.handleClickFetchApi(song) }
           />
         </label>
-        { loading && <Loading />}
+        {loading && <Loading />}
       </div>
     );
   }
