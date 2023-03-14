@@ -14,6 +14,7 @@ class Album extends Component {
       artistName: '',
       collectionName: '',
       songs: [],
+      favoriteSongs: [],
       loading: false,
     };
   }
@@ -24,10 +25,11 @@ class Album extends Component {
   }
 
   getSavedFavoriteSongs = async () => {
+    // const { favoriteSongs } = this.state;
     this.setState({ loading: true });
     const response = await getFavoriteSongs();
-    this.setState({ loading: false });
-    console.log(response, this.state.songs);
+    this.setState({ loading: false, favoriteSongs: response });
+    // console.log('favorite songs: ', favoriteSongs, 'allSongs', this.state.songs);
   };
 
   fetchMusicApi = async () => {
@@ -47,7 +49,7 @@ class Album extends Component {
   };
 
   render() {
-    const { songs, artistName, collectionName, loading } = this.state;
+    const { songs, artistName, collectionName, loading, favoriteSongs } = this.state;
     return (
       <div data-testid="page-album">
         <Header />
@@ -56,8 +58,14 @@ class Album extends Component {
         <section>
           {
             songs.filter((_song, index) => index !== 0)
-              .map((song) => <MusicCard key={ song.trackId } song={ song } />)
+              .map((song) => (<MusicCard
+                key={ song.trackId }
+                song={ song }
+                alreadyFavorite={ favoriteSongs
+                  .some((favoriteSong) => favoriteSong.trackId === song.trackId) }
+              />))
           }
+          <h1>{console.log('favoriteSongs', favoriteSongs, 'songs', songs)}</h1>
         </section>
         {loading && <Loading />}
       </div>
