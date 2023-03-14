@@ -14,10 +14,10 @@ class Login extends Component {
       logged: false,
     };
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleUsernameChange = this.handleUsernameChange.bind(this);
   }
 
-  handleChange = ({ target }) => {
+  handleUsernameChange = ({ target }) => {
     const { name, value } = target;
     this.setState({
       [name]: value,
@@ -55,7 +55,7 @@ class Login extends Component {
               value={ userName }
               type="text"
               data-testid="login-name-input"
-              onChange={ this.handleChange }
+              onChange={ this.handleUsernameChange }
             />
           </label>
           <button
@@ -80,7 +80,7 @@ class Login extends Component {
 //   // loading: PropTypes.bool.isRequired,
 //   // logged: PropTypes.bool.isRequired,
 //   // isDisabled: PropTypes.bool.isRequired,
-//   // handleChange: PropTypes.func.isRequired,
+//   // handleUsernameChange: PropTypes.func.isRequired,
 //   // loginBtn: PropTypes.func.isRequired,
 // };
 

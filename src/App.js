@@ -7,52 +7,9 @@ import NotFound from './pages/NotFound';
 import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import Search from './pages/Search';
-import searchAlbumsAPI from './services/searchAlbumsAPI';
 
 class App extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      loading: false,
-      isDisabled: true,
-      searchArtistInput: '',
-      searchResult: [],
-    };
-  }
-
-  handleChange = ({ target }) => {
-    const { name, value } = target;
-    this.setState({
-      [name]: value,
-    }, this.validateFields);
-  };
-
-  validateFields = () => {
-    const { searchArtistInput } = this.state;
-    const MIN_ARTIST_LENGTH = 2;
-    const searchArtistLength = searchArtistInput.length >= MIN_ARTIST_LENGTH;
-    if (searchArtistLength) {
-      this.setState({ isDisabled: false });
-    } else {
-      this.setState({ isDisabled: true });
-    }
-  };
-
-  searchArtistBtn = async () => {
-    const { searchArtistInput } = this.state;
-    this.setState({ loading: true });
-    const response = await searchAlbumsAPI(searchArtistInput);
-    this.setState({
-      // searchArtistInput: '',
-      loading: false,
-      searchResult: response });
-  };
-
   render() {
-    const { loading, isDisabled,
-      searchArtistInput, searchResult } = this.state;
-
     return (
       <div>
         <BrowserRouter>
@@ -64,15 +21,7 @@ class App extends React.Component {
             <Route
               exact
               path="/search"
-              render={ (props) => (<Search
-                { ...props }
-                handleChange={ this.handleChange }
-                isDisabled={ isDisabled }
-                searchArtistInput={ searchArtistInput }
-                searchArtistBtn={ this.searchArtistBtn }
-                loading={ loading }
-                searchResult={ searchResult }
-              />) }
+              component={ Search }
             />
             <Route
               exact
