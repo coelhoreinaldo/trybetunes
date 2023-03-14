@@ -7,7 +7,7 @@ class RenderizeAlbum extends Component {
     const { searchResult } = this.props;
     const { artistName, collectionName, artworkUrl100, collectionId } = searchResult;
     return (
-      <div>
+      <div className="albums-search-result">
         <img src={ artworkUrl100 } alt={ collectionName } />
         <h3>{collectionName}</h3>
         <h4>{artistName}</h4>

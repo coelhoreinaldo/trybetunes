@@ -78,13 +78,14 @@ class Search extends Component {
           {
             searchResult.length <= 0 ? <p>{NOT_FOUND}</p> : <p>{RESULTS_FOUND}</p>
           }
-          {searchResult.map((album, index) => (
-            <div key={ index }>
+          <div className="albums-search-container">
+            {searchResult.map((album, index) => (
               <RenderizeAlbum
+                key={ index }
                 searchResult={ album }
               />
-            </div>
-          ))}
+            ))}
+          </div>
 
         </form>
       </div>

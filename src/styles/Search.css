@@ -1,0 +1,10 @@
+.albums-search-result {
+  border: 1px solid black;
+  max-width: 140px;
+  width: 100%;
+}
+
+.albums-search-container {
+  display: flex;
+  flex-wrap: wrap;
+}
