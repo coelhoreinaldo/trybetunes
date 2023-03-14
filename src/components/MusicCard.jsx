@@ -33,26 +33,6 @@ class MusicCard extends Component {
     this.setState({ loading: false });
   };
 
-  // handleChangeFavorite = async (song) => { essa função funciona para quase todosdo requisito 11
-  //   const { alreadyFavorite } = this.props;
-  //   const { isFavorite } = this.state;
-  //   this.setState({ loading: true });
-  //   const favSongs = await getFavoriteSongs();
-  //   if (favSongs.some((favoriteSong) => favoriteSong.trackId === song.trackId)) {
-  //     this.setState({ isFavorite: false });
-  //     await removeSong(song);
-  //   } else {
-  //     this.setState({ isFavorite: true });
-  //     await addSong(song);
-  //     return;
-  //   }
-  //   this.setState({ loading: false });
-  // };
-
-  // handleClickFetchApi = async (song) => { ficava aqui as requisições às apis
-  //   await addSong(song);
-  // };
-
   render() {
     const { loading, isFavorite } = this.state;
     const { song } = this.props;
