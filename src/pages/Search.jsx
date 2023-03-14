@@ -13,6 +13,7 @@ class Search extends Component {
       loading: false,
       isDisabled: true,
       searchArtistInput: '',
+      prevSearchArtistInput: '',
       searchResult: [],
     };
   }
@@ -39,16 +40,18 @@ class Search extends Component {
     const { searchArtistInput } = this.state;
     this.setState({ loading: true });
     const response = await searchAlbumsAPI(searchArtistInput);
-    this.setState({
-      // searchArtistInput: '',
+    this.setState((prevState) => ({
       loading: false,
-      searchResult: response });
+      searchResult: response,
+      searchArtistInput: '',
+      prevSearchArtistInput: prevState.searchArtistInput,
+    }));
   };
 
   render() {
     const { isDisabled, searchArtistInput,
-      loading, searchResult } = this.state;
-    const RESULTS_FOUND = `Resultado de álbuns de: ${searchArtistInput}`;
+      loading, searchResult, prevSearchArtistInput } = this.state;
+    const RESULTS_FOUND = `Resultado de álbuns de: ${prevSearchArtistInput}`;
     const NOT_FOUND = 'Nenhum álbum foi encontrado';
     return (
       <div data-testid="page-search">
@@ -73,12 +76,16 @@ class Search extends Component {
           </button>
           {loading && <Loading />}
           {
-            searchResult.length > 0 ? <p>{RESULTS_FOUND}</p> : <p>{NOT_FOUND}</p>
+            searchResult.length <= 0 ? <p>{NOT_FOUND}</p> : <p>{RESULTS_FOUND}</p>
           }
-          {searchResult.map((album) => (<RenderizeAlbum
-            searchResult={ album }
-            key={ album.artistId }
-          />))}
+          {searchResult.map((album, index) => (
+            <div key={ index }>
+              <RenderizeAlbum
+                searchResult={ album }
+              />
+            </div>
+          ))}
+
         </form>
       </div>
     );
