@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
+import { getFavoriteSongs } from '../services/favoriteSongsAPI';
+import Loading from '../components/Loading';
 
 class Album extends Component {
   constructor() {
@@ -12,12 +14,21 @@ class Album extends Component {
       artistName: '',
       collectionName: '',
       songs: [],
+      loading: false,
     };
   }
 
   componentDidMount() {
     this.fetchMusicApi();
+    this.getSavedFavoriteSongs();
   }
+
+  getSavedFavoriteSongs = async () => {
+    this.setState({ loading: true });
+    const response = await getFavoriteSongs();
+    this.setState({ loading: false });
+    console.log(response, this.state.songs);
+  };
 
   fetchMusicApi = async () => {
     const {
@@ -36,7 +47,7 @@ class Album extends Component {
   };
 
   render() {
-    const { songs, artistName, collectionName } = this.state;
+    const { songs, artistName, collectionName, loading } = this.state;
     return (
       <div data-testid="page-album">
         <Header />
@@ -48,6 +59,7 @@ class Album extends Component {
               .map((song) => <MusicCard key={ song.trackId } song={ song } />)
           }
         </section>
+        {loading && <Loading />}
       </div>
     );
   }
