@@ -1,15 +1,24 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { addSong } from '../services/favoriteSongsAPI';
+import Loading from './Loading';
 
 class MusicCard extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     loading: false,
-  //   };
-  // }
+  constructor() {
+    super();
+    this.state = {
+      loading: false,
+    };
+  }
+
+  handleChangeFavorite = async (song) => {
+    this.setState({ loading: true });
+    await addSong(song);
+    this.setState({ loading: false });
+  };
 
   render() {
+    const { loading } = this.state;
     const { song } = this.props;
     const { trackName, previewUrl, trackId } = song;
     return (
@@ -25,8 +34,13 @@ class MusicCard extends Component {
         </audio>
         <label>
           Favorita
-          <input data-testid={ `checkbox-music-${trackId}` } type="checkbox" />
+          <input
+            data-testid={ `checkbox-music-${trackId}` }
+            type="checkbox"
+            onChange={ () => this.handleChangeFavorite(song) }
+          />
         </label>
+        { loading && <Loading />}
       </div>
     );
   }
