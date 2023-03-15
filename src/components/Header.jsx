@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 import Loading from './Loading';
+import logo from '../images/logo.svg';
 
 class Header extends Component {
   state = {
@@ -22,20 +23,24 @@ class Header extends Component {
   render() {
     const { userInfo, loading } = this.state;
     return (
-      <header data-testid="header-component">
+      <header className="header" data-testid="header-component">
         <nav>
-          <Link data-testid="link-to-search" to="/search">
-            Pesquisar
+          <Link to="/search" className="nav-link" data-testid="link-to-search">
+            <span>Pesquisar</span>
+            <ion-icon name="search-outline" />
           </Link>
-          <Link data-testid="link-to-favorites" to="/favorites">
-            Favoritas
+          <Link to="/favorites" className="nav-link" data-testid="link-to-favorites">
+            <span>Favoritas</span>
+            <ion-icon name="star-outline" />
           </Link>
-          <Link data-testid="link-to-profile" to="/profile">
-            Perfil
+          <Link to="/profile" className="nav-link" data-testid="link-to-profile">
+            <span>Perfil</span>
+            <ion-icon className="nav-ion" name="person-outline" />
           </Link>
-          <h1 data-testid="header-user-name">{userInfo.name}</h1>
-          {loading && <Loading />}
         </nav>
+        <img src={ logo } alt="trybe-logo" />
+        <h4 data-testid="header-user-name">{userInfo.name}</h4>
+        {loading && <Loading />}
       </header>
     );
   }

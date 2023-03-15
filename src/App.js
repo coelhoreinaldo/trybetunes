@@ -12,6 +12,7 @@ import './styles/reset.css';
 import './styles/App.css';
 import './styles/Login.css';
 import './styles/variables.css';
+import './styles/Header.css';
 
 class App extends React.Component {
   render() {

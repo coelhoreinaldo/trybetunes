@@ -1,0 +1,38 @@
+.header {
+  align-items: center;
+  background-color: aliceblue;
+  display: flex;
+  height: 32px;
+  justify-content: space-between;
+  padding: 2px 8px;
+}
+
+.header nav {
+  display: flex;
+  gap: 16px;
+  text-decoration: none;
+}
+
+.header img {
+  height: 100%;
+}
+
+.header .nav-link {
+  align-items: center;
+  color: var(--primary-color);
+  display: flex;
+  text-decoration: none;
+}
+
+.header .nav-link span {
+  display: none;
+}
+
+
+@media only screen and ( min-width : 768px ) {
+
+  .header .nav-link span {
+    display: unset;
+  }
+
+}

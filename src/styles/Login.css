@@ -65,7 +65,7 @@
 }
 
 
-.form-container .login-form ::placeholder {  /* Firefox 19+ */
+.form-container .login-form ::placeholder {
   color: var(--primary-color);
 }
 
