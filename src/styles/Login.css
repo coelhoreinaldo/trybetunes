@@ -1,5 +1,6 @@
 .form-container {
   align-items: center;
+  color: var(--primary-color);
   display: flex;
   justify-content: center;
   min-height: 100vh;
@@ -13,22 +14,45 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  height: 200px;
+  height: 270px;
   max-width: 350px;
-  padding: 16px 4px;
+  padding: 20px 40px;
   width: 100%;
 }
 
-.form-container .login-form h1 {
-  text-align: center;
-}
-
-.form-container .login-form input {
-  text-align: center;
+.form-container .login-form img {
+  margin-bottom: 16px;
+  max-width: 210px;
+  width: 100%;
 }
 
 .form-container .login-form input, .form-container .login-form button {
+  border: 1px solid var(--primary-color);
+  border-radius: 100px;
   max-width: 256px;
+  padding: 8px;
   text-align: center;
-  width: 100%;
+  width: 256px;
+
+}
+
+.form-container .login-form input {
+  background-color: white;
+}
+
+.form-container .login-form button {
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  transition: 300ms;
+}
+
+.form-container .login-form button:disabled {
+  background-color: rgb(106, 106, 106);
+}
+
+
+.form-container .login-form ::placeholder {  /* Firefox 19+ */
+  color: var(--primary-color);
 }

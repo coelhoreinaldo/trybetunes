@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import Loading from '../components/Loading';
 import { createUser } from '../services/userAPI';
+import logo from '../images/logo.svg';
 
 class Login extends Component {
   constructor() {
@@ -47,7 +48,7 @@ class Login extends Component {
     return (
       <div data-testid="page-login" className="form-container">
         <form className="login-form">
-          <h1>Login</h1>
+          <img src={ logo } alt="logo" />
           <label>
             <input
               name="userName"
@@ -55,7 +56,7 @@ class Login extends Component {
               type="text"
               data-testid="login-name-input"
               onChange={ this.handleUsernameChange }
-              placeholder="qual é o seu nome"
+              placeholder="qual é o seu nome?"
             />
           </label>
           <button
@@ -68,7 +69,7 @@ class Login extends Component {
 
           </button>
           {loading && <Loading />}
-          {logged && <Redirect to="/search" /> }
+          {logged && <Redirect to="/search" />}
         </form>
       </div>
     );

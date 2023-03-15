@@ -7,6 +7,7 @@ body {
   52%) , url('../images/background.svg'); */
   background: linear-gradient(123.66deg, #003be5 12.08%, #00d5e2 86.52%);
   background-size: cover;
+  font-family: Epilogue , sans-serif;
   height: 100%;
   width: 100%;
 }
