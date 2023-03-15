@@ -10,6 +10,7 @@ import Search from './pages/Search';
 import './styles/Search.css';
 import './styles/reset.css';
 import './styles/App.css';
+import './styles/Login.css';
 
 class App extends React.Component {
   render() {
