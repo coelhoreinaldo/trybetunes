@@ -54,9 +54,9 @@ class Search extends Component {
     const RESULTS_FOUND = `Resultado de álbuns de: ${prevSearchArtistInput}`;
     const NOT_FOUND = 'Nenhum álbum foi encontrado';
     return (
-      <div data-testid="page-search">
+      <main data-testid="page-search" className="search-container">
         <Header />
-        <form>
+        <form className="search-form">
           <label>
             <input
               data-testid="search-artist-input"
@@ -88,7 +88,7 @@ class Search extends Component {
           </div>
 
         </form>
-      </div>
+      </main>
     );
   }
 }

@@ -1,3 +1,9 @@
+main {
+  display: flex;
+  flex-flow: column wrap;
+  height: 100vh;
+}
+
 .albums-search-result {
   border: 1px solid black;
   max-width: 140px;

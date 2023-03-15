@@ -31,8 +31,42 @@
 
 @media only screen and ( min-width : 768px ) {
 
+  .header {
+    flex-direction: column;
+    height: 100vh;
+    justify-content: unset;
+    max-width: 280px;
+    width: 100%;
+  }
+
+  .header .nav-link {
+    color: gray;
+    display: grid;
+    gap: 14px;
+    grid-template-columns: auto auto;
+    justify-content: flex-start;
+  }
+
   .header .nav-link span {
     display: unset;
   }
 
+  .header nav {
+    flex-direction: column;
+    font-size: 1.2rem;
+    gap: 32px;
+    margin: auto 0;
+    order: 2;
+  }
+
+  .header h4 {
+    height: 95px;
+    justify-self: flex-end;
+    order: 3;
+  }
+
+  .header img {
+    max-height: 95px;
+    order: 1;
+  }
 }
