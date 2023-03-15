@@ -50,13 +50,13 @@ class Login extends Component {
         <form className="login-form">
           <h1>Login</h1>
           <label>
-            Nome
             <input
               name="userName"
               value={ userName }
               type="text"
               data-testid="login-name-input"
               onChange={ this.handleUsernameChange }
+              placeholder="qual é o seu nome"
             />
           </label>
           <button
