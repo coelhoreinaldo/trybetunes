@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import Loading from '../components/Loading';
 import { createUser } from '../services/userAPI';
+import '../styles/Login.css';
 
 class Login extends Component {
   constructor() {
@@ -45,9 +46,9 @@ class Login extends Component {
     const { userName, isLoginBtnDisabled, loading, logged } = this.state;
     const user = { name: userName };
     return (
-      <div data-testid="page-login">
-        <h1>Login</h1>
-        <form>
+      <div data-testid="page-login" className="form-container">
+        <form className="login-form">
+          <h1>Login</h1>
           <label>
             Nome
             <input

@@ -1,0 +1,8 @@
+.form-container {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  height: 100%;
+  max-width: 300px;
+  width: 100%;
+}

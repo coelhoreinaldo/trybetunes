@@ -14,7 +14,7 @@ import './styles/App.css';
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className="main">
         <BrowserRouter>
           <Switch>
             <Route exact path="/album/:id" component={ Album } />
