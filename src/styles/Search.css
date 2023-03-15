@@ -1,7 +1,10 @@
 main {
   display: flex;
-  flex-flow: column wrap;
   height: 100vh;
+}
+
+.search-container .search-form {
+  flex-grow: 1;
 }
 
 .albums-search-result {
