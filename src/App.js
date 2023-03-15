@@ -8,6 +8,8 @@ import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import Search from './pages/Search';
 import './styles/Search.css';
+import './styles/reset.css';
+import './styles/App.css';
 
 class App extends React.Component {
   render() {
