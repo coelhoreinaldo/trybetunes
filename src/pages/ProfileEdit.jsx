@@ -73,7 +73,7 @@ class ProfileEdit extends Component {
     return (
       <div data-testid="page-profile-edit">
         <Header />
-        <h1>Editar Perfil</h1>
+        <h1>Editar perfil</h1>
         {loading && <Loading />}
         <form onSubmit={ this.handleSubmit }>
           <label htmlFor="nameInput">
