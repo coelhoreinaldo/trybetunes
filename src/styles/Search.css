@@ -1,10 +1,17 @@
 main {
+  background-color: aliceblue;
   display: flex;
+  flex-direction: column;
   height: 100vh;
 }
 
 .search-container .search-form {
   flex-grow: 1;
+}
+
+.search-container .input-fields {
+  background: linear-gradient(123.66deg, #003be5 12.08%, #00d5e2 86.52%);
+  height: 240px;
 }
 
 .albums-search-result {
@@ -16,4 +23,16 @@ main {
 .albums-search-container {
   display: flex;
   flex-wrap: wrap;
+}
+
+
+@media only screen and ( min-width : 768px ) {
+
+  main {
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: unset;
+    height: 100vh;
+  }
+
 }

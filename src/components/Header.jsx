@@ -26,16 +26,16 @@ class Header extends Component {
       <header className="header" data-testid="header-component">
         <nav>
           <Link to="/search" className="nav-link" data-testid="link-to-search">
-            <ion-icon name="search-outline" />
             <span>Pesquisar</span>
+            <ion-icon name="search-outline" />
           </Link>
           <Link to="/favorites" className="nav-link" data-testid="link-to-favorites">
-            <ion-icon name="star-outline" />
             <span>Favoritas</span>
+            <ion-icon name="star-outline" />
           </Link>
           <Link to="/profile" className="nav-link" data-testid="link-to-profile">
-            <ion-icon className="nav-ion" name="person-outline" />
             <span>Perfil</span>
+            <ion-icon className="nav-ion" name="person-outline" />
           </Link>
         </nav>
         <img src={ logo } alt="trybe-logo" />

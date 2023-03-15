@@ -57,27 +57,29 @@ class Search extends Component {
       <main data-testid="page-search" className="search-container">
         <Header />
         <form className="search-form">
-          <label>
-            <input
-              data-testid="search-artist-input"
-              placeholder="Nome do Artista"
-              name="searchArtistInput"
-              value={ searchArtistInput }
-              onChange={ this.handleChange }
-            />
-          </label>
-          <button
-            type="button"
-            data-testid="search-artist-button"
-            disabled={ isDisabled }
-            onClick={ this.searchArtistBtn }
-          >
-            Pesquisar
-          </button>
-          {loading && <Loading />}
-          {
-            searchResult.length <= 0 ? <p>{NOT_FOUND}</p> : <p>{RESULTS_FOUND}</p>
-          }
+          <div className="input-fields">
+            <label>
+              <input
+                data-testid="search-artist-input"
+                placeholder="Nome do Artista"
+                name="searchArtistInput"
+                value={ searchArtistInput }
+                onChange={ this.handleChange }
+              />
+            </label>
+            <button
+              type="button"
+              data-testid="search-artist-button"
+              disabled={ isDisabled }
+              onClick={ this.searchArtistBtn }
+            >
+              Pesquisar
+            </button>
+            {loading && <Loading />}
+            {
+              searchResult.length <= 0 ? <p>{NOT_FOUND}</p> : <p>{RESULTS_FOUND}</p>
+            }
+          </div>
           <div className="albums-search-container">
             {searchResult.map((album, index) => (
               <RenderizeAlbum
