@@ -49,27 +49,29 @@ class Login extends Component {
       <div data-testid="page-login" className="form-container">
         <form className="login-form">
           <img src={ logo } alt="logo" />
-          <label>
-            <input
-              name="userName"
-              value={ userName }
-              type="text"
-              data-testid="login-name-input"
-              onChange={ this.handleUsernameChange }
-              placeholder="qual é o seu nome?"
-            />
-          </label>
-          <button
-            type="button"
-            disabled={ isLoginBtnDisabled }
-            data-testid="login-submit-button"
-            onClick={ () => this.loginBtn(user) }
-          >
-            Entrar
+          <fieldset>
+            <label>
+              <input
+                name="userName"
+                value={ userName }
+                type="text"
+                data-testid="login-name-input"
+                onChange={ this.handleUsernameChange }
+                placeholder="qual é o seu nome?"
+              />
+            </label>
+            <button
+              type="button"
+              disabled={ isLoginBtnDisabled }
+              data-testid="login-submit-button"
+              onClick={ () => this.loginBtn(user) }
+            >
+              Entrar
 
-          </button>
-          {loading && <Loading />}
-          {logged && <Redirect to="/search" />}
+            </button>
+            {loading && <Loading />}
+            {logged && <Redirect to="/search" />}
+          </fieldset>
         </form>
       </div>
     );
