@@ -75,13 +75,4 @@ class Login extends Component {
   }
 }
 
-// Login.propTypes = {
-//   // userName: PropTypes.string.isRequired,
-//   // loading: PropTypes.bool.isRequired,
-//   // logged: PropTypes.bool.isRequired,
-//   // isDisabled: PropTypes.bool.isRequired,
-//   // handleUsernameChange: PropTypes.func.isRequired,
-//   // loginBtn: PropTypes.func.isRequired,
-// };
-
 export default Login;
