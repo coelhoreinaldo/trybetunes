@@ -31,7 +31,7 @@ class Profile extends Component {
         <h1>Profile</h1>
         <p>{userInfo.name}</p>
         <p>{userInfo.email}</p>
-        <img src={ userInfo.img } alt={ userInfo.name } data-testid="profile-image" />
+        <img src={ userInfo.image } alt={ userInfo.name } data-testid="profile-image" />
         <p>{userInfo.description}</p>
         {loading && <Loading />}
         <Link to="/profile/edit">
