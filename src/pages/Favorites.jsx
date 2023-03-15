@@ -17,14 +17,6 @@ class Favorites extends Component {
     this.getFavoriteSongs();
   }
 
-  componentDidUpdate(_prevProps, prevState) {
-    const { favoriteSongs } = this.state;
-    if (prevState.favoriteSongs.length !== favoriteSongs.length) {
-      console.log(prevState.favoriteSongs, 'prevState');
-      console.log(favoriteSongs, 'thisState');
-    }
-  }
-
   getFavoriteSongs = async () => {
     this.setState({ loading: true });
     const response = await getFavoriteSongs();
@@ -38,8 +30,9 @@ class Favorites extends Component {
         <Header />
         <h1>Favorites</h1>
         {favoriteSongs.map((song) => (<MusicCard
-          key={song.trackId}
-          song={song}
+          key={ song.trackId }
+          song={ song }
+          handleRemoveFavorite={ this.getFavoriteSongs }
         />))}
         {loading && <Loading />}
       </div>
