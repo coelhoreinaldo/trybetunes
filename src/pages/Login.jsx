@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import Loading from '../components/Loading';
 import { createUser } from '../services/userAPI';
-import '../styles/Login.css';
+import logo from '../images/logo.svg';
 
 class Login extends Component {
   constructor() {
@@ -48,28 +48,30 @@ class Login extends Component {
     return (
       <div data-testid="page-login" className="form-container">
         <form className="login-form">
-          <h1>Login</h1>
-          <label>
-            Nome
-            <input
-              name="userName"
-              value={ userName }
-              type="text"
-              data-testid="login-name-input"
-              onChange={ this.handleUsernameChange }
-            />
-          </label>
-          <button
-            type="button"
-            disabled={ isLoginBtnDisabled }
-            data-testid="login-submit-button"
-            onClick={ () => this.loginBtn(user) }
-          >
-            Entrar
+          <img src={ logo } alt="logo" />
+          <fieldset>
+            <label>
+              <input
+                name="userName"
+                value={ userName }
+                type="text"
+                data-testid="login-name-input"
+                onChange={ this.handleUsernameChange }
+                placeholder="qual é o seu nome?"
+              />
+            </label>
+            <button
+              type="button"
+              disabled={ isLoginBtnDisabled }
+              data-testid="login-submit-button"
+              onClick={ () => this.loginBtn(user) }
+            >
+              Entrar
 
-          </button>
-          {loading && <Loading />}
-          {logged && <Redirect to="/search" /> }
+            </button>
+            {loading && <Loading />}
+            {logged && <Redirect to="/search" />}
+          </fieldset>
         </form>
       </div>
     );

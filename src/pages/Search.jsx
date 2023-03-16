@@ -45,38 +45,43 @@ class Search extends Component {
       searchResult: response,
       searchArtistInput: '',
       prevSearchArtistInput: prevState.searchArtistInput,
+      isDisabled: true,
     }));
   };
 
   render() {
     const { isDisabled, searchArtistInput,
       loading, searchResult, prevSearchArtistInput } = this.state;
-    const RESULTS_FOUND = `Resultado de álbuns de: ${prevSearchArtistInput}`;
+    const RESULTS_FOUND = `Resultado de álbuns de ${prevSearchArtistInput.toUpperCase()}`;
     const NOT_FOUND = 'Nenhum álbum foi encontrado';
     return (
-      <div data-testid="page-search">
+      <main data-testid="page-search" className="search-container">
         <Header />
-        <form>
-          <label>
-            <input
-              data-testid="search-artist-input"
-              placeholder="Nome do Artista"
-              name="searchArtistInput"
-              value={ searchArtistInput }
-              onChange={ this.handleChange }
-            />
-          </label>
-          <button
-            type="button"
-            data-testid="search-artist-button"
-            disabled={ isDisabled }
-            onClick={ this.searchArtistBtn }
-          >
-            Pesquisar
-          </button>
-          {loading && <Loading />}
+        <form className="right-content">
+          <div className="top-bar">
+            <label>
+              <input
+                data-testid="search-artist-input"
+                placeholder="Nome do Artista"
+                name="searchArtistInput"
+                value={ searchArtistInput }
+                onChange={ this.handleChange }
+              />
+            </label>
+            <button
+              type="button"
+              data-testid="search-artist-button"
+              disabled={ isDisabled }
+              onClick={ this.searchArtistBtn }
+            >
+              Pesquisar
+            </button>
+            {loading && <Loading />}
+          </div>
           {
-            searchResult.length <= 0 ? <p>{NOT_FOUND}</p> : <p>{RESULTS_FOUND}</p>
+            searchResult.length <= 0
+              ? <h3 className="search-result-text">{NOT_FOUND}</h3>
+              : <h3 className="search-result-text">{RESULTS_FOUND}</h3>
           }
           <div className="albums-search-container">
             {searchResult.map((album, index) => (
@@ -88,7 +93,7 @@ class Search extends Component {
           </div>
 
         </form>
-      </div>
+      </main>
     );
   }
 }

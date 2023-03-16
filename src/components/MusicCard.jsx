@@ -40,26 +40,30 @@ class MusicCard extends Component {
     const { song } = this.props;
     const { trackName, previewUrl, trackId } = song;
     return (
-      <div>
-        <h2>{trackName}</h2>
-        <audio data-testid="audio-component" src={ previewUrl } controls>
-          <track kind="captions" />
-          O seu navegador não suporta o elemento
-          <code>audio</code>
-          .
-        </audio>
-        <label>
-          Favorita
-          <input
-            data-testid={ `checkbox-music-${trackId}` }
-            type="checkbox"
-            name="isFavorite"
-            onChange={ () => this.handleChangeFavorite(song) }
-            checked={ isFavorite }
-          />
-        </label>
-        {loading && <Loading />}
-      </div>
+      <section className="track-player">
+        <div>
+          <h2 className="song-name">{trackName}</h2>
+          <div>
+            <audio data-testid="audio-component" src={ previewUrl } controls>
+              <track kind="captions" />
+              O seu navegador não suporta o elemento
+              <code>audio</code>
+              .
+            </audio>
+            <label className="favorite-checkbox">
+              <input
+                data-testid={ `checkbox-music-${trackId}` }
+                type="checkbox"
+                name="isFavorite"
+                onChange={ () => this.handleChangeFavorite(song) }
+                checked={ isFavorite }
+              />
+              <ion-icon name="heart" />
+            </label>
+          </div>
+          {loading && <Loading />}
+        </div>
+      </section>
     );
   }
 }

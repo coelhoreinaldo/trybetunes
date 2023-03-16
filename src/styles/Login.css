@@ -1,8 +1,88 @@
 .form-container {
   align-items: center;
-  background-color: white;
+  color: var(--primary-color);
   display: flex;
-  height: 100%;
-  max-width: 300px;
+  justify-content: center;
+  min-height: 100vh;
   width: 100%;
+}
+
+.form-container .login-form {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.881);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) , 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+  margin: 0 8px;
+  max-width: 450px;
+  min-height: 350px;
+  min-width: 300px;
+  padding: 20px 40px;
+  width: 100%;
+}
+
+.form-container .login-form img {
+  margin-bottom: 16px;
+  max-width: 210px;
+  width: 100%;
+}
+
+.form-container .login-form fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0;
+  text-align: center;
+}
+
+.form-container .login-form input, .form-container .login-form button {
+  border: 1px solid var(--primary-color);
+  border-radius: 100px;
+  max-width: 256px;
+  padding: 8px;
+  text-align: center;
+  width: 256px;
+}
+
+.form-container .login-form input {
+  background-color: white;
+}
+
+.form-container .login-form button {
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 300ms;
+}
+
+.form-container .login-form button:disabled {
+  background-color: rgb(106, 106, 106);
+}
+
+
+.form-container .login-form ::placeholder {
+  color: var(--primary-color);
+}
+
+@media only screen and ( min-width : 768px ) {
+
+  .form-container .login-form {
+    height: 100%;
+    max-width: 750px;
+    min-height: 450px;
+  }
+
+  .form-container .login-form input, .form-container .login-form button {
+    min-width: 440px;
+  }
+
+  .form-container .login-form img {
+    margin-bottom: 4px;
+  }
 }

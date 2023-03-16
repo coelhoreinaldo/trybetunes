@@ -1,0 +1,126 @@
+/* stylelint-disable selector-type-no-unknown */
+.page-album .top-bar {
+  color: white;
+  display: flex;
+  height: 100%;
+  justify-content: flex-end;
+  margin-top: 40px;
+  padding-left: 16px;
+  position: relative;
+}
+
+.page-album .top-bar .artist-album {
+  padding-left: 16px;
+}
+
+.page-album .top-bar .album-name {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+.page-album .top-bar .artist-name {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.page-album .top-bar .album-artwork {
+  border-radius: 12px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) , 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+  left: 16px;
+  max-width: 120px;
+  position: absolute;
+  top: 180px;
+  width: 100%;
+  z-index: 1;
+
+}
+
+.page-album .song-list {
+  align-items: center;
+  background-color: aliceblue;
+  display: flex;
+  flex-flow: column wrap;
+  margin-top: 72px;
+  padding: 0 8px;
+}
+
+.track-player {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 8px auto;
+}
+
+.track-player audio {
+  max-width: 260px;
+}
+
+.track-player div {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 8px;
+  justify-content: center;
+  width: 100%;
+}
+
+.track-player .favorite-checkbox {
+  cursor: pointer;
+  font-size: 22px;
+  position: relative;
+}
+
+.track-player .favorite-checkbox input {
+  cursor: pointer;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+}
+
+.track-player .favorite-checkbox ion-icon {
+  color: gray;
+  height: 25px;
+  left: 0;
+  position: absolute;
+  top: -12px;
+  transition: 400ms;
+  width: 26px;
+}
+
+.track-player .favorite-checkbox:hover ion-icon {
+  color: var(--secondary-color);
+}
+
+.track-player .favorite-checkbox input:checked ~ ion-icon {
+  color: red;
+}
+
+@media only screen and ( min-width : 768px ) {
+
+  .page-album .top-bar {
+    margin-top: unset;
+  }
+
+  /*
+  .page-album .top-bar .album-name {
+    font-size: 20px;
+  }
+
+  .page-album .top-bar .artist-name {
+    font-size: 14px;
+  } */
+
+  /*
+  .track-player div {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    width: 100%;
+  } */
+}
