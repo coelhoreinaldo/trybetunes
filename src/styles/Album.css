@@ -40,7 +40,15 @@
 
 .page-album .song-list {
   background-color: aliceblue;
-  margin-top: 64px;
+  margin-top: 72px;
+  padding: 0 8px;
+}
+
+.track-player {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  margin: 8px 0;
 }
 
 @media only and screen ( min-width : 768px ) {
