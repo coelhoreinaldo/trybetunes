@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
-// import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Loading from '../components/Loading';
 
 class Album extends Component {
@@ -20,14 +19,7 @@ class Album extends Component {
 
   componentDidMount() {
     this.fetchMusicApi();
-    // this.getSavedFavoriteSongs();
   }
-
-  // getSavedFavoriteSongs = async () => {
-  //   this.setState({ loading: true });
-  //   await getFavoriteSongs();
-  //   this.setState({ loading: false });
-  // };
 
   fetchMusicApi = async () => {
     const {
@@ -46,20 +38,26 @@ class Album extends Component {
   render() {
     const { songs, artistName, collectionName, loading } = this.state;
     return (
-      <div data-testid="page-album">
+      <main data-testid="page-album">
         <Header />
-        <h1 data-testid="artist-name">{artistName}</h1>
-        <h2 data-testid="album-name">{collectionName}</h2>
-        <section>
-          {
-            songs.map((song) => (<MusicCard
-              key={ song.trackId }
-              song={ song }
-            />))
-          }
-        </section>
-        {loading && <Loading />}
-      </div>
+        <div className="main">
+          <section className="top-bar">
+            <h1 data-testid="artist-name">{artistName}</h1>
+            <h2 data-testid="album-name">{collectionName}</h2>
+          </section>
+          <section>
+            {
+              songs.map((song) => (<MusicCard
+                key={ song.trackId }
+                song={ song }
+              />))
+            }
+          </section>
+
+          {loading && <Loading />}
+        </div>
+
+      </main>
     );
   }
 }

@@ -5,23 +5,8 @@ main {
   height: 100vh;
 }
 
-.search-container .search-form {
-  flex-grow: 1;
-}
-
 /* INPUT FIELDS */
-.search-container .input-fields {
-  align-items: center;
-  background: linear-gradient(123.66deg, #003be5 12.08%, #00d5e2 86.52%);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  height: 100%;
-  justify-content: center;
-  max-height: 240px;
-}
-
-.search-container .input-fields input, .search-container .input-fields button {
+.search-container .top-bar input, .search-container .top-bar button {
   border: none;
   border-radius: 100px;
   padding: 8px;
@@ -29,23 +14,24 @@ main {
   text-transform: uppercase;
 }
 
-.search-container .input-fields input {
+
+.search-container .top-bar input {
   background-color: rgba(255, 255, 255, 0.56);
   color: white;
 }
 
-.search-container .input-fields input::placeholder {
+.search-container .top-bar input::placeholder {
   color: rgba(255, 255, 255, 0.524);
 }
 
-.search-container .input-fields button {
+.search-container .top-bar button {
   cursor: pointer;
   font-weight: 700;
   transition: 300ms;
   width: 209px;
 }
 
-.search-container .input-fields button:not( [ disabled ] ) {
+.search-container .top-bar button:not( [ disabled ] ) {
   background-color: var(--secondary-color);
   color: white;
 }
@@ -110,11 +96,11 @@ main {
     height: 100vh;
   }
 
-  .search-container .input-fields {
+  .search-container .top-bar {
     flex-direction: unset;
   }
 
-  .search-container .input-fields input, .search-container .input-fields button {
+  .search-container .top-bar input, .search-container .top-bar button {
     border: none;
     border-radius: 100px;
     color: white;
@@ -124,26 +110,27 @@ main {
     width: 460px;
   }
 
-  .search-container .input-fields input {
+  .search-container .top-bar input {
     background-color: rgba(255, 255, 255, 0.56);
   }
 
-  .search-container .input-fields input::placeholder {
+  .search-container .top-bar input::placeholder {
     color: rgba(255, 255, 255, 0.524);
   }
 
-  .search-container .input-fields button {
+  .search-container .top-bar button {
     cursor: pointer;
     font-weight: 700;
     transition: 300ms;
     width: 132px;
   }
 
-  .search-container .input-fields button:not( [ disabled ] ) {
+  .search-container .top-bar button:not( [ disabled ] ) {
     background-color: var(--secondary-color);
   }
 
   .search-container .albums-search-container {
+    gap: 32px;
     padding: 0 64px;
 
     /* display: grid;
@@ -151,6 +138,8 @@ main {
   }
 
   .search-container .albums-search-result {
+    border-radius: 16px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     min-width: 260px;
   }
 
@@ -159,6 +148,7 @@ main {
     font-style: normal;
     font-weight: 700;
     line-height: 150%;
+    padding: 0 6px;
   }
 
   .search-container .artist-name {
@@ -167,6 +157,7 @@ main {
     font-weight: 400;
     line-height: 150%;
     margin-top: auto;
+    padding: 2px 6px;
   }
 
 }

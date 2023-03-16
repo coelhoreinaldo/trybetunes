@@ -9,10 +9,11 @@ import ProfileEdit from './pages/ProfileEdit';
 import Search from './pages/Search';
 import './styles/reset.css';
 import './styles/Search.css';
-import './styles/App.css';
 import './styles/Login.css';
 import './styles/variables.css';
 import './styles/Header.css';
+import './styles/App.css';
+import './styles/Album.css';
 
 class App extends React.Component {
   render() {
