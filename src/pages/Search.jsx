@@ -57,7 +57,7 @@ class Search extends Component {
     return (
       <main data-testid="page-search" className="search-container">
         <Header />
-        <form className="main">
+        <form className="right-content">
           <div className="top-bar">
             <label>
               <input

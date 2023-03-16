@@ -40,7 +40,7 @@ class Album extends Component {
     return (
       <main data-testid="page-album">
         <Header />
-        <div className="main">
+        <div className="right-content">
           <section className="top-bar">
             <h1 data-testid="artist-name">{artistName}</h1>
             <h2 data-testid="album-name">{collectionName}</h2>

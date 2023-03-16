@@ -5,6 +5,7 @@ main {
   height: 100vh;
 }
 
+
 /* INPUT FIELDS */
 .search-container .top-bar input, .search-container .top-bar button {
   border: none;
@@ -13,7 +14,6 @@ main {
   text-align: center;
   text-transform: uppercase;
 }
-
 
 .search-container .top-bar input {
   background-color: rgba(255, 255, 255, 0.56);
