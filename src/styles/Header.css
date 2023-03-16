@@ -1,8 +1,9 @@
+/* stylelint-disable selector-type-no-unknown */
 .header {
   align-items: center;
   background-color: white;
   display: flex;
-  height: 32px;
+  height: 40px;
   justify-content: space-between;
   padding: 2px 8px;
 }
@@ -10,11 +11,17 @@
 .header nav {
   display: flex;
   gap: 16px;
+  order: 1;
   text-decoration: none;
 }
 
 .header img {
+  display: inline-flex;
   height: 100%;
+}
+
+.header h4 {
+  order: 2;
 }
 
 .header .nav-link {
@@ -26,6 +33,10 @@
 
 .header .nav-link span {
   display: none;
+}
+
+.header .nav-link ion-icon {
+  font-size: 24px;
 }
 
 
@@ -40,6 +51,7 @@
   }
 
   .header .nav-link {
+    align-items: center;
     color: gray;
     display: grid;
     gap: 14px;
@@ -49,6 +61,13 @@
 
   .header .nav-link span {
     display: unset;
+  }
+
+  .header .nav-link ion-icon {
+    font-size: unset;
+    grid-column-start: 1;
+    grid-row-start: 1;
+
   }
 
   .header nav {
