@@ -1,3 +1,4 @@
+/* stylelint-disable selector-type-no-unknown */
 .page-album .top-bar {
   color: white;
   display: flex;
@@ -45,11 +46,55 @@
 }
 
 .track-player {
-  background-color: red;
   display: flex;
   flex-direction: column;
   margin: 8px 0;
 }
+
+.track-player .favorite-checkbox {
+  cursor: pointer;
+  font-size: 22px;
+  position: relative;
+}
+
+.track-player .favorite-checkbox input {
+  cursor: pointer;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+}
+
+.track-player .favorite-checkbox ion-icon {
+  color: gray;
+  height: 25px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: 400ms;
+  width: 25px;
+}
+
+.track-player .favorite-checkbox:hover ion-icon {
+  color: var(--secondary-color);
+}
+
+.track-player .favorite-checkbox input:checked ~ ion-icon {
+  color: red;
+}
+
+/* .track-player .favorite-checkbox ion-icon {
+
+} */
+
+/* .track-player .favorite-checkbox ion-icon {
+
+} */
+
+/* .track-player .favorite-checkbox ion-icon {
+
+} */
+
 
 @media only and screen ( min-width : 768px ) {
 
