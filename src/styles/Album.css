@@ -100,21 +100,27 @@
   color: red;
 }
 
-@media only and screen ( min-width : 768px ) {
+@media only screen and ( min-width : 768px ) {
 
+  .page-album .top-bar {
+    margin-top: unset;
+  }
+
+  /*
   .page-album .top-bar .album-name {
     font-size: 20px;
   }
 
   .page-album .top-bar .artist-name {
     font-size: 14px;
-  }
+  } */
 
+  /*
   .track-player div {
     align-items: center;
     display: flex;
     flex-direction: row;
     height: 200px;
     width: 100%;
-  }
+  } */
 }
