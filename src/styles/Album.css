@@ -40,15 +40,32 @@
 }
 
 .page-album .song-list {
+  align-items: center;
   background-color: aliceblue;
+  display: flex;
+  flex-flow: column wrap;
   margin-top: 72px;
   padding: 0 8px;
 }
 
 .track-player {
+  align-items: center;
   display: flex;
-  flex-direction: column;
-  margin: 8px 0;
+  justify-content: center;
+  margin: 8px auto;
+}
+
+.track-player audio {
+  max-width: 260px;
+}
+
+.track-player div {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 8px;
+  justify-content: center;
+  width: 100%;
 }
 
 .track-player .favorite-checkbox {
@@ -70,9 +87,9 @@
   height: 25px;
   left: 0;
   position: absolute;
-  top: 0;
+  top: -12px;
   transition: 400ms;
-  width: 25px;
+  width: 26px;
 }
 
 .track-player .favorite-checkbox:hover ion-icon {
@@ -83,19 +100,6 @@
   color: red;
 }
 
-/* .track-player .favorite-checkbox ion-icon {
-
-} */
-
-/* .track-player .favorite-checkbox ion-icon {
-
-} */
-
-/* .track-player .favorite-checkbox ion-icon {
-
-} */
-
-
 @media only and screen ( min-width : 768px ) {
 
   .page-album .top-bar .album-name {
@@ -104,5 +108,13 @@
 
   .page-album .top-bar .artist-name {
     font-size: 14px;
+  }
+
+  .track-player div {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    width: 100%;
   }
 }
