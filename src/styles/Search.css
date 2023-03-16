@@ -9,6 +9,7 @@ main {
   flex-grow: 1;
 }
 
+/* INPUT FIELDS */
 .search-container .input-fields {
   align-items: center;
   background: linear-gradient(123.66deg, #003be5 12.08%, #00d5e2 86.52%);
@@ -49,7 +50,8 @@ main {
   color: white;
 }
 
-.search-container .search-result {
+/* ALBUMS */
+.search-container .search-result-text {
   color: var(--primary-color);
   font-style: italic;
   font-weight: 300;
@@ -149,7 +151,7 @@ main {
   }
 
   .search-container .albums-search-result {
-    min-width: 300px;
+    min-width: 260px;
   }
 
   .search-container .collection-name {

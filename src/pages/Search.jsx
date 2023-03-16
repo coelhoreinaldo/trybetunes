@@ -80,8 +80,8 @@ class Search extends Component {
           </div>
           {
             searchResult.length <= 0
-              ? <h3 className="search-result">{NOT_FOUND}</h3>
-              : <h3 className="search-result">{RESULTS_FOUND}</h3>
+              ? <h3 className="search-result-text">{NOT_FOUND}</h3>
+              : <h3 className="search-result-text">{RESULTS_FOUND}</h3>
           }
           <div className="albums-search-container">
             {searchResult.map((album, index) => (
