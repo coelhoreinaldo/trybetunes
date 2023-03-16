@@ -12,6 +12,7 @@ class Album extends Component {
     this.state = {
       artistName: '',
       collectionName: '',
+      artworkUrl100: '',
       songs: [],
       loading: false,
     };
@@ -31,21 +32,29 @@ class Album extends Component {
     this.setState({
       artistName: response[0].artistName,
       collectionName: response[0].collectionName,
+      artworkUrl100: response[0].artworkUrl100,
       songs: response.filter((_song, index) => index !== 0),
     });
   };
 
   render() {
-    const { songs, artistName, collectionName, loading } = this.state;
+    const { songs, artistName, collectionName, artworkUrl100, loading } = this.state;
     return (
-      <main data-testid="page-album">
+      <main data-testid="page-album" className="page-album">
         <Header />
         <div className="right-content">
           <section className="top-bar">
-            <h1 data-testid="artist-name">{artistName}</h1>
-            <h2 data-testid="album-name">{collectionName}</h2>
+            <div className="artist-album">
+              <h2 data-testid="album-name" className="album-name">{collectionName}</h2>
+              <h1 data-testid="artist-name" className="artist-name">{artistName}</h1>
+            </div>
+            <img
+              className="album-artwork"
+              src={ artworkUrl100 }
+              alt={ collectionName }
+            />
           </section>
-          <section>
+          <section className="song-list">
             {
               songs.map((song) => (<MusicCard
                 key={ song.trackId }
