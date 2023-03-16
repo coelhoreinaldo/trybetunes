@@ -52,7 +52,7 @@ class Search extends Component {
   render() {
     const { isDisabled, searchArtistInput,
       loading, searchResult, prevSearchArtistInput } = this.state;
-    const RESULTS_FOUND = `Resultado de álbuns de: ${prevSearchArtistInput}`;
+    const RESULTS_FOUND = `Resultado de álbuns de ${prevSearchArtistInput.toUpperCase()}`;
     const NOT_FOUND = 'Nenhum álbum foi encontrado';
     return (
       <main data-testid="page-search" className="search-container">
@@ -77,10 +77,12 @@ class Search extends Component {
               Pesquisar
             </button>
             {loading && <Loading />}
-            {
-              searchResult.length <= 0 ? <p>{NOT_FOUND}</p> : <p>{RESULTS_FOUND}</p>
-            }
           </div>
+          {
+            searchResult.length <= 0
+              ? <h3 className="search-result">{NOT_FOUND}</h3>
+              : <h3 className="search-result">{RESULTS_FOUND}</h3>
+          }
           <div className="albums-search-container">
             {searchResult.map((album, index) => (
               <RenderizeAlbum

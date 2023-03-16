@@ -49,22 +49,60 @@ main {
   color: white;
 }
 
-.albums-search-result {
-  border: 1px solid black;
-  max-width: 140px;
+.search-container .search-result {
+  color: var(--primary-color);
+  font-style: italic;
+  font-weight: 300;
+  margin: 16px 0;
+  text-align: center;
+
+}
+
+.search-container .albums-search-container {
+  background-color: aliceblue;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-evenly;
+  margin-top: 18px;
+}
+
+.search-container .albums-search-result {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: 100%;
+  width: 160px;
+}
+
+.search-container .link-to-album {
+  color: #3d495c;
+  text-decoration: none;
+}
+
+.search-container .albums-search-result .collection-artwork {
+  border-radius: 8px;
   width: 100%;
 }
 
-.albums-search-container {
-  display: flex;
-  flex-wrap: wrap;
+.search-container .collection-name {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
 }
 
+.search-container .artist-name {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  margin-top: auto;
+}
 
 @media only screen and ( min-width : 768px ) {
 
   main {
-    background-color: aliceblue;
     display: flex;
     flex-direction: unset;
     height: 100vh;
@@ -101,6 +139,32 @@ main {
 
   .search-container .input-fields button:not( [ disabled ] ) {
     background-color: var(--secondary-color);
+  }
+
+  .search-container .albums-search-container {
+    padding: 0 64px;
+
+    /* display: grid;
+    grid-template-columns: auto auto auto auto; */
+  }
+
+  .search-container .albums-search-result {
+    min-width: 300px;
+  }
+
+  .search-container .collection-name {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+  }
+
+  .search-container .artist-name {
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-top: auto;
   }
 
 }

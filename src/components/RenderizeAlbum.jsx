@@ -7,17 +7,21 @@ class RenderizeAlbum extends Component {
     const { searchResult } = this.props;
     const { artistName, collectionName, artworkUrl100, collectionId } = searchResult;
     return (
-      <div className="albums-search-result">
-        <img src={ artworkUrl100 } alt={ collectionName } />
-        <h3>{collectionName}</h3>
-        <h4>{artistName}</h4>
-        <Link
-          data-testid={ `link-to-album-${collectionId}` }
-          to={ `/album/${collectionId}` }
-        >
-          Acesse aqui
-        </Link>
-      </div>
+      <Link
+        data-testid={ `link-to-album-${collectionId}` }
+        to={ `/album/${collectionId}` }
+        className="link-to-album"
+      >
+        <div className="albums-search-result">
+          <img
+            className="collection-artwork"
+            src={ artworkUrl100 }
+            alt={ collectionName }
+          />
+          <h3 className="collection-name">{collectionName}</h3>
+          <h4 className="artist-name">{artistName}</h4>
+        </div>
+      </Link>
     );
   }
 }
