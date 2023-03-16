@@ -45,6 +45,7 @@ class Search extends Component {
       searchResult: response,
       searchArtistInput: '',
       prevSearchArtistInput: prevState.searchArtistInput,
+      isDisabled: true,
     }));
   };
 

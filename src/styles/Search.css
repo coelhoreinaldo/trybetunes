@@ -41,7 +41,7 @@ main {
   cursor: pointer;
   font-weight: 700;
   transition: 300ms;
-  width: 132px;
+  width: 209px;
 }
 
 .search-container .input-fields button:not( [ disabled ] ) {
