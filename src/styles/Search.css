@@ -1,11 +1,3 @@
-main {
-  background-color: aliceblue;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
-
 /* INPUT FIELDS */
 .search-container .top-bar input, .search-container .top-bar button {
   border: none;
@@ -89,12 +81,6 @@ main {
 }
 
 @media only screen and ( min-width : 768px ) {
-
-  main {
-    display: flex;
-    flex-direction: unset;
-    height: 100vh;
-  }
 
   .search-container .top-bar {
     flex-direction: unset;
