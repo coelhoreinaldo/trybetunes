@@ -10,8 +10,43 @@ main {
 }
 
 .search-container .input-fields {
+  align-items: center;
   background: linear-gradient(123.66deg, #003be5 12.08%, #00d5e2 86.52%);
-  height: 240px;
+  display: flex;
+  gap: 8px;
+  height: 100%;
+  justify-content: center;
+  max-height: 240px;
+}
+
+.search-container .input-fields input, .search-container .input-fields button {
+  border: none;
+  border-radius: 100px;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 460px;
+}
+
+.search-container .input-fields input {
+  background-color: rgba(255, 255, 255, 0.56);
+}
+
+.search-container .input-fields input::placeholder {
+  color: rgba(255, 255, 255, 0.524);
+}
+
+.search-container .input-fields button {
+  cursor: pointer;
+  font-weight: 700;
+  transition: 300ms;
+  width: 132px;
+}
+
+.search-container .input-fields button:not( [ disabled ] ) {
+  background-color: var(--secondary-color);
+  width: 132px;
 }
 
 .albums-search-result {
