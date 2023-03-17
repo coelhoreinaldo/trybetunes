@@ -4,6 +4,7 @@ import Loading from '../components/Loading';
 import RenderizeAlbum from '../components/RenderizeAlbum';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
+import Topbar from '../components/Topbar';
 
 class Search extends Component {
   constructor() {
@@ -58,7 +59,7 @@ class Search extends Component {
       <main data-testid="page-search" className="search-container">
         <Header />
         <form className="right-content">
-          <div className="top-bar">
+          <Topbar>
             <label>
               <input
                 data-testid="search-artist-input"
@@ -77,7 +78,7 @@ class Search extends Component {
               Pesquisar
             </button>
             {loading && <Loading />}
-          </div>
+          </Topbar>
           {
             searchResult.length <= 0
               ? <h3 className="search-result-text">{NOT_FOUND}</h3>
