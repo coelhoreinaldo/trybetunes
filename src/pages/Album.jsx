@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
 import Loading from '../components/Loading';
+import Topbar from '../components/Topbar';
 
 class Album extends Component {
   constructor() {
@@ -43,17 +44,17 @@ class Album extends Component {
       <main data-testid="page-album" className="page-album">
         <Header />
         <div className="right-content">
-          <section className="top-bar">
-            <div className="artist-album">
-              <h2 data-testid="album-name" className="album-name">{collectionName}</h2>
-              <h1 data-testid="artist-name" className="artist-name">{artistName}</h1>
-            </div>
+          <Topbar>
             <img
               className="album-artwork"
               src={ artworkUrl100 }
               alt={ collectionName }
             />
-          </section>
+            <div className="artist-album">
+              <h2 data-testid="album-name" className="album-name">{collectionName}</h2>
+              <h1 data-testid="artist-name" className="artist-name">{artistName}</h1>
+            </div>
+          </Topbar>
           <section className="song-list">
             {
               songs.map((song) => (<MusicCard

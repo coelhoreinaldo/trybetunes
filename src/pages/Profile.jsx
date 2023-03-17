@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
+import Topbar from '../components/Topbar';
 import { getUser } from '../services/userAPI';
 
 class Profile extends Component {
@@ -26,18 +27,22 @@ class Profile extends Component {
   render() {
     const { userInfo, loading } = this.state;
     return (
-      <div data-testid="page-profile">
+      <main data-testid="page-profile">
         <Header />
-        <h1>Profile</h1>
-        <p>{userInfo.name}</p>
-        <p>{userInfo.email}</p>
-        <img src={ userInfo.image } alt={ userInfo.name } data-testid="profile-image" />
-        <p>{userInfo.description}</p>
-        {loading && <Loading />}
-        <Link to="/profile/edit">
-          Editar perfil
-        </Link>
-      </div>
+        <div className="right-content">
+          <Topbar>
+            <h1>Profile</h1>
+          </Topbar>
+          <p>{userInfo.name}</p>
+          <p>{userInfo.email}</p>
+          <img src={ userInfo.image } alt={ userInfo.name } data-testid="profile-image" />
+          <p>{userInfo.description}</p>
+          {loading && <Loading />}
+          <Link to="/profile/edit">
+            Editar perfil
+          </Link>
+        </div>
+      </main>
     );
   }
 }

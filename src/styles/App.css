@@ -5,7 +5,6 @@ body {
 
   /* background-image: linear-gradient(123.66deg, #003be5 12.08%, #00d5e2 86.
   52%) , url('../images/background.svg'); */
-  background: linear-gradient(123.66deg, #003be5 12.08%, #00d5e2 86.52%);
   background-repeat: no-repeat;
   background-size: cover;
   font-family: Epilogue , sans-serif;
@@ -15,21 +14,40 @@ body {
 
 .top-bar {
   align-items: center;
-  background: linear-gradient(123.66deg, #003be5 12.08%, #00d5e2 86.52%);
+  background-image: url('../images/background.svg') , linear-gradient(123.66deg, #003be5 12.08%, #00d5e2 86.52%);
+  background-repeat: no-repeat;
+  background-size: cover;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  color: white;
   display: flex;
   flex-direction: column;
   gap: 8px;
   height: 100%;
   justify-content: center;
+  margin-top: 56px;
   max-height: 240px;
 }
 
 main {
-  background-color: aliceblue;
+  background-color: #e6e8ea;
   display: flex;
   flex-direction: column;
   height: 100vh;
+}
+
+.not-found {
+  align-items: center;
+  background-image: url('../images/background.svg') , linear-gradient(123.66deg, #003be5 12.08%, #00d5e2 86.52%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: larger;
+  height: 100vh;
+  justify-content: center;
+  text-align: center;
+  width: 100vw;
 }
 
 @media only screen and ( min-width : 768px ) {
@@ -39,10 +57,19 @@ main {
     flex-direction: unset;
   }
 
+  .top-bar {
+    margin-top: unset;
+  }
+
   .right-content {
+    background-color: #e6e8ea;
     flex-grow: 1;
     margin-left: 280px;
 
     /* position: relative; */
+  }
+
+  .not-found {
+    font-size: xx-large;
   }
 }

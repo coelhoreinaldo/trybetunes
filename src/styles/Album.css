@@ -1,15 +1,9 @@
 /* stylelint-disable selector-type-no-unknown */
 .page-album .top-bar {
-  color: white;
+  align-items: flex-end;
   display: flex;
-  height: 100%;
-  justify-content: flex-end;
-  margin-top: 40px;
-  padding-left: 16px;
-  position: relative;
-}
-
-.page-album .top-bar .artist-album {
+  flex-direction: row;
+  justify-content: flex-start;
   padding-left: 16px;
 }
 
@@ -30,22 +24,20 @@
 .page-album .top-bar .album-artwork {
   border-radius: 12px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) , 0 8px 20px 0 rgba(0, 0, 0, 0.2);
-  left: 16px;
-  max-width: 120px;
-  position: absolute;
-  top: 180px;
+  margin-bottom: -56px;
+  max-width: 140px;
   width: 100%;
   z-index: 1;
-
 }
 
-.page-album .song-list {
+.song-list {
   align-items: center;
-  background-color: aliceblue;
+  background-color: #e6e8ea;
   display: flex;
   flex-flow: column wrap;
   margin-top: 72px;
   padding: 0 8px;
+  width: 100%;
 }
 
 .track-player {
@@ -102,25 +94,50 @@
 
 @media only screen and ( min-width : 768px ) {
 
-  .page-album .top-bar {
-    margin-top: unset;
+  .page-album .top-bar .album-artwork {
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) , 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: -126px;
+    margin-left: 15%;
+    max-width: 260px;
+    width: 100%;
+    z-index: 1;
   }
 
-  /*
   .page-album .top-bar .album-name {
-    font-size: 20px;
+    font-size: 34px;
   }
 
   .page-album .top-bar .artist-name {
-    font-size: 14px;
-  } */
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+  }
 
-  /*
+  .page-album .song-list {
+    margin: 144px auto;
+  }
+
+
   .track-player div {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: auto auto auto;
+    height: 56px;
+    margin: 4px 0 0;
+  }
+
+  .track-player .song-name {
     align-items: center;
     display: flex;
-    flex-direction: row;
-    height: 200px;
-    width: 100%;
-  } */
+    font-size: 16px;
+    font-weight: 500;
+    width: 144px;
+  }
+
+  .track-player audio {
+    max-width: unset;
+  }
+
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
 import MusicCard from '../components/MusicCard';
+import Topbar from '../components/Topbar';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 class Favorites extends Component {
@@ -26,16 +27,23 @@ class Favorites extends Component {
   render() {
     const { loading, favoriteSongs } = this.state;
     return (
-      <div data-testid="page-favorites">
+      <main data-testid="page-favorites" className="page-favorites">
         <Header />
-        <h1>Favorites</h1>
-        {favoriteSongs.map((song) => (<MusicCard
-          key={ song.trackId }
-          song={ song }
-          handleRemoveFavorite={ this.getFavoriteSongs }
-        />))}
-        {loading && <Loading />}
-      </div>
+        <div className="right-content">
+          <Topbar>
+            <h1>Favorites</h1>
+          </Topbar>
+          <section className="song-list">
+
+            {favoriteSongs.map((song) => (<MusicCard
+              key={ song.trackId }
+              song={ song }
+              handleRemoveFavorite={ this.getFavoriteSongs }
+            />))}
+            {loading && <Loading />}
+          </section>
+        </div>
+      </main>
     );
   }
 }
