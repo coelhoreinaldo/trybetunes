@@ -1,15 +1,12 @@
 /* stylelint-disable selector-type-no-unknown */
 .page-album .top-bar {
+  align-items: flex-end;
   color: white;
   display: flex;
+  flex-direction: row;
   height: 100%;
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin-top: 40px;
-  padding-left: 16px;
-  position: relative;
-}
-
-.page-album .top-bar .artist-album {
   padding-left: 16px;
 }
 
@@ -30,13 +27,16 @@
 .page-album .top-bar .album-artwork {
   border-radius: 12px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) , 0 8px 20px 0 rgba(0, 0, 0, 0.2);
-  left: 16px;
-  max-width: 120px;
-  position: absolute;
-  top: 180px;
+  margin-bottom: -56px;
+  max-width: 140px;
+
+  /* left: 16px; */
+
+  /* position: absolute; */
+
+  /* top: 180px; */
   width: 100%;
   z-index: 1;
-
 }
 
 .page-album .song-list {
@@ -106,6 +106,45 @@
     margin-top: unset;
   }
 
+  /* .page-album .top-bar .album-artwork {
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) , 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+    left: 500px;
+    max-width: 260px;
+    position: absolute;
+    top: 108px;
+    width: 100%;
+    z-index: 1;
+  } */
+
+  .page-album .song-list {
+    margin-top: 144px;
+  }
+
+  .page-album .track-player {
+    max-width: 600px;
+  }
+
+  .track-player div {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+
+  .track-player .song-name {
+    align-items: center;
+    display: flex;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+    width: 144px;
+  }
+
+  .track-player audio {
+    max-width: unset;
+  }
+
+
   /*
   .page-album .top-bar .album-name {
     font-size: 20px;
@@ -115,12 +154,4 @@
     font-size: 14px;
   } */
 
-  /*
-  .track-player div {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    height: 200px;
-    width: 100%;
-  } */
 }

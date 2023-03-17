@@ -44,15 +44,15 @@ class Album extends Component {
         <Header />
         <div className="right-content">
           <section className="top-bar">
-            <div className="artist-album">
-              <h2 data-testid="album-name" className="album-name">{collectionName}</h2>
-              <h1 data-testid="artist-name" className="artist-name">{artistName}</h1>
-            </div>
             <img
               className="album-artwork"
               src={ artworkUrl100 }
               alt={ collectionName }
             />
+            <div className="artist-album">
+              <h2 data-testid="album-name" className="album-name">{collectionName}</h2>
+              <h1 data-testid="artist-name" className="artist-name">{artistName}</h1>
+            </div>
           </section>
           <section className="song-list">
             {
