@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
 import { getUser, updateUser } from '../services/userAPI';
+import Topbar from '../components/Topbar';
 
 class ProfileEdit extends Component {
   constructor() {
@@ -71,11 +72,12 @@ class ProfileEdit extends Component {
     const { loading, nameInput, imageInput,
       emailInput, descriptionInput, isDisabled } = this.state;
     return (
-      <div data-testid="page-profile-edit">
+      <main data-testid="page-profile-edit">
         <Header />
-        <h1>Editar perfil</h1>
-        {loading && <Loading />}
-        <form onSubmit={ this.handleSubmit }>
+        <form className="right-content" onSubmit={ this.handleSubmit }>
+          <Topbar>
+            <h1>Editar perfil</h1>
+          </Topbar>
           <label htmlFor="nameInput">
             <input
               type="text"
@@ -129,8 +131,9 @@ class ProfileEdit extends Component {
             Salvar
 
           </button>
+          {loading && <Loading />}
         </form>
-      </div>
+      </main>
     );
   }
 }
