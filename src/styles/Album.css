@@ -35,7 +35,7 @@
 
 .page-album .song-list {
   align-items: center;
-  background-color: aliceblue;
+  background-color: #e6e8ea;
   display: flex;
   flex-flow: column wrap;
   margin-top: 72px;
@@ -110,41 +110,40 @@
     z-index: 1;
   }
 
-  .page-album .song-list {
-    margin-top: 144px;
+  .page-album .top-bar .album-name {
+    font-size: 34px;
   }
 
-  .page-album .track-player {
-    max-width: 600px;
+  .page-album .top-bar .artist-name {
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
   }
+
+  .page-album .song-list {
+    margin: 144px auto;
+  }
+
 
   .track-player div {
     display: grid;
+    gap: 40px;
     grid-template-columns: auto auto auto;
+    height: 56px;
+    margin: 4px 0 0;
   }
 
   .track-player .song-name {
     align-items: center;
     display: flex;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 14px;
+    font-size: 16px;
+    font-weight: 500;
     width: 144px;
   }
 
   .track-player audio {
     max-width: unset;
   }
-
-
-  /*
-  .page-album .top-bar .album-name {
-    font-size: 20px;
-  }
-
-  .page-album .top-bar .artist-name {
-    font-size: 14px;
-  } */
 
 }

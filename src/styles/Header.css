@@ -48,9 +48,10 @@
 
   .header {
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
     justify-content: unset;
     max-width: 280px;
+    min-height: 100vh;
     width: 100%;
   }
 

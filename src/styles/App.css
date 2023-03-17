@@ -26,7 +26,6 @@ body {
 }
 
 main {
-  background-color: aliceblue;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -40,6 +39,7 @@ main {
   }
 
   .right-content {
+    background-color: #e6e8ea;
     flex-grow: 1;
     margin-left: 280px;
 
