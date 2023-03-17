@@ -33,6 +33,19 @@ main {
   height: 100vh;
 }
 
+.not-found {
+  align-items: center;
+  background: linear-gradient(123.66deg, #003be5 12.08%, #00d5e2 86.52%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: larger;
+  height: 100vh;
+  justify-content: center;
+  text-align: center;
+  width: 100vw;
+}
+
 @media only screen and ( min-width : 768px ) {
 
   main {
@@ -50,5 +63,9 @@ main {
     margin-left: 280px;
 
     /* position: relative; */
+  }
+
+  .not-found {
+    font-size: xx-large;
   }
 }
