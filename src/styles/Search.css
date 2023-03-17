@@ -82,10 +82,6 @@
 
 @media only screen and ( min-width : 768px ) {
 
-  .search-container .top-bar {
-    flex-direction: unset;
-  }
-
   .search-container .top-bar input, .search-container .top-bar button {
     border: none;
     border-radius: 100px;

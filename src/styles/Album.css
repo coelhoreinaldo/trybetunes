@@ -4,9 +4,7 @@
   color: white;
   display: flex;
   flex-direction: row;
-  height: 100%;
   justify-content: flex-start;
-  margin-top: 40px;
   padding-left: 16px;
 }
 
@@ -95,10 +93,6 @@
 }
 
 @media only screen and ( min-width : 768px ) {
-
-  .page-album .top-bar {
-    margin-top: unset;
-  }
 
   .page-album .top-bar .album-artwork {
     border-radius: 12px;
