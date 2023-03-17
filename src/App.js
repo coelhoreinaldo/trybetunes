@@ -14,6 +14,7 @@ import './styles/variables.css';
 import './styles/Header.css';
 import './styles/App.css';
 import './styles/Album.css';
+import './styles/Favorites.css';
 
 class App extends React.Component {
   render() {

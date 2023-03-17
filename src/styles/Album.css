@@ -1,7 +1,6 @@
 /* stylelint-disable selector-type-no-unknown */
 .page-album .top-bar {
   align-items: flex-end;
-  color: white;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -31,13 +30,14 @@
   z-index: 1;
 }
 
-.page-album .song-list {
+.song-list {
   align-items: center;
   background-color: #e6e8ea;
   display: flex;
   flex-flow: column wrap;
   margin-top: 72px;
   padding: 0 8px;
+  width: 100%;
 }
 
 .track-player {

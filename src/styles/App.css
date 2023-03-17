@@ -16,6 +16,7 @@ body {
   align-items: center;
   background: linear-gradient(123.66deg, #003be5 12.08%, #00d5e2 86.52%);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  color: white;
   display: flex;
   flex-direction: column;
   gap: 8px;
