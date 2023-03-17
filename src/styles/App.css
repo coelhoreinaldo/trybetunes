@@ -26,6 +26,7 @@ body {
 }
 
 main {
+  background-color: #e6e8ea;
   display: flex;
   flex-direction: column;
   height: 100vh;
