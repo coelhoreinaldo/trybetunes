@@ -1,6 +1,8 @@
 .form-container {
   align-items: center;
-  background: linear-gradient(123.66deg, #003be5 12.08%, #00d5e2 86.52%);
+  background-image: url('../images/background.svg') , linear-gradient(123.66deg, #003be5 12.08%, #00d5e2 86.52%);
+  background-repeat: no-repeat;
+  background-size: cover;
   color: var(--primary-color);
   display: flex;
   justify-content: center;
