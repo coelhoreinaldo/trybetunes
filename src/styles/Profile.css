@@ -9,17 +9,26 @@
   max-width: 190px;
 }
 
+.profile-page .right-content {
+  padding-bottom: 64px;
+}
+
 .profile-page .user-data {
   display: flex;
   flex-direction: column;
   gap: 8px;
   justify-content: center;
-  margin: 104px auto 0;
-  width: 400px;
+  margin: 104px auto 24px;
+  max-width: 260px;
+  width: 100%;
 }
 
 .profile-page .user-data .user-infos {
   font-weight: 700;
+}
+
+.profile-page .user-data .user-description {
+  text-align: justify;
 }
 
 .profile-page .edit-profile-link {
@@ -29,7 +38,7 @@
   color: white;
   cursor: pointer;
   display: flex;
-  margin: 0 auto;
+  margin: 0 auto 90px;
   max-width: max-content;
   padding: 8px;
   text-align: center;
