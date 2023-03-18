@@ -49,7 +49,12 @@
 
 @media only screen and ( min-width : 768px ) {
 
-  /* .profile-page .user-data {
-    grid-template-columns: 110px 600px;
-  } */
+  .profile-page .user-image {
+    max-width: 260px;
+  }
+
+  .profile-page .user-data {
+    margin-top: 144px;
+    max-width: 400px;
+  }
 }
