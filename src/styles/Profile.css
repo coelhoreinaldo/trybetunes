@@ -10,13 +10,12 @@
 }
 
 .profile-page .user-data {
-  background-color: aliceblue;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  grid-template-columns: 110px 110px;
   justify-content: center;
-  margin: 104px 0 0;
+  margin: 104px auto 0;
+  width: 400px;
 }
 
 .profile-page .user-data .user-infos {

@@ -37,8 +37,8 @@ class Profile extends Component {
             <h1>Perfil</h1>
             {loading
               ? (<Loading />)
-              : (
-                <img
+              : (image
+                && <img
                   className="user-image"
                   src={ image }
                   alt={ name }
