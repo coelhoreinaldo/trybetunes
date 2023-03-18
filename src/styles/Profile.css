@@ -3,7 +3,7 @@
   min-height: 190px;
 }
 
-.profile-page .user-image {
+.profile-page .user-image, .profile-edit-page .user-image {
   border-radius: 50%;
   box-shadow: 2px 2px 8px gray , 2px 2px 2px gray;
   max-width: 190px;
