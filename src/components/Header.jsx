@@ -38,16 +38,24 @@ class Header extends Component {
             <ion-icon className="nav-ion" name="person-outline" />
           </Link>
         </nav>
-        <img src={ logo } alt="trybe-logo" />
+        <img className="logo" src={ logo } alt="trybe-logo" />
         {loading ? (
           <Loading />
         ) : (
-          <h4
-            className="header-user-name"
-            data-testid="header-user-name"
-          >
-            {userInfo.name}
-          </h4>)}
+          <div className="header-user-info">
+            <h4
+              className="header-user-name"
+              data-testid="header-user-name"
+            >
+              {userInfo.name}
+              <img
+                className="header-user-image"
+                src={ userInfo.image }
+                alt={ userInfo.name }
+              />
+            </h4>
+          </div>
+        )}
       </header>
     );
   }

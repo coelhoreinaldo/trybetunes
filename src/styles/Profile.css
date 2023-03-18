@@ -1,4 +1,4 @@
-.profile-page .user-image, .profile-page .loading-text {
+.profile-page .user-image, .profile-page .right-content .loading-text {
   margin-bottom: -144px;
   min-height: 190px;
 }

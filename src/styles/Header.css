@@ -19,13 +19,17 @@
   text-decoration: none;
 }
 
-.header img {
+.header .logo {
   display: inline-flex;
   height: 100%;
 }
 
-.header h4 {
+.header .header-user-info, .header .loading-text, .header-user-name {
+  align-items: center;
+  display: flex;
+  gap: 4px;
   order: 2;
+  width: max-content;
 }
 
 .header .nav-link {
@@ -41,6 +45,15 @@
 
 .header .nav-link ion-icon {
   font-size: 24px;
+}
+
+.header .header-user-info {
+  display: flex;
+}
+
+.header .header-user-image {
+  border-radius: 50%;
+  max-height: 40px;
 }
 
 
@@ -89,7 +102,7 @@
     order: 3;
   }
 
-  .header img {
+  .header .logo {
     max-height: 95px;
     order: 1;
   }
