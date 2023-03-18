@@ -34,7 +34,7 @@ class Profile extends Component {
         <Header />
         <div className="right-content">
           <Topbar>
-            <h1>Profile</h1>
+            <h1>Perfil</h1>
             {loading
               ? (<Loading />)
               : (
@@ -45,11 +45,27 @@ class Profile extends Component {
                   data-testid="profile-image"
                 />)}
           </Topbar>
-          <p className="user-name">{name}</p>
-          <p className="user-email">{email}</p>
-          <p className="user-description">{description}</p>
-
-          <Link to="/profile/edit">
+          <section className="user-data">
+            <p className="user-infos">
+              Nome:
+            </p>
+            <span className="user-name">
+              {name}
+            </span>
+            <p className="user-infos">
+              Email:
+            </p>
+            <span className="user-email">
+              {email}
+            </span>
+            <p className="user-infos">
+              Descrição:
+            </p>
+            <span className="user-description">
+              {description}
+            </span>
+          </section>
+          <Link className="edit-profile-link" to="/profile/edit">
             Editar perfil
           </Link>
         </div>

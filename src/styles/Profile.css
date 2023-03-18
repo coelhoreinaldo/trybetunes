@@ -1,5 +1,38 @@
 .profile-page .user-image, .profile-page .loading-text {
-  max-width: 160px;
-  min-height: 160px;
-  width: 100%;
+  margin-bottom: -144px;
+  min-height: 190px;
+}
+
+.profile-page .user-image {
+  border-radius: 50%;
+  box-shadow: 2px 2px 8px gray , 2px 2px 2px gray;
+  max-width: 190px;
+}
+
+.profile-page .user-data {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 110px 110px;
+  justify-content: center;
+  margin: 104px 0;
+}
+
+.profile-page .user-data .user-infos {
+  font-weight: 700;
+}
+
+.profile-page .edit-profile-link {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 100px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  margin: 0 auto;
+  max-width: max-content;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 300ms;
 }
