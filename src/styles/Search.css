@@ -39,19 +39,22 @@
 }
 
 .search-container .albums-search-container {
-  background-color: aliceblue;
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
   justify-content: space-evenly;
   margin-top: 18px;
+
 }
 
 .search-container .albums-search-result {
+  border-radius: 6px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   gap: 4px;
   height: 100%;
+  padding: 6px;
   width: 160px;
 }
 
@@ -125,7 +128,6 @@
 
   .search-container .albums-search-result {
     border-radius: 16px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     min-width: 260px;
   }
 

@@ -1,4 +1,5 @@
 body {
+  background-color: var(--terciary-color);
 
   /* background-image: linear-gradient(to left, rgba(0, 57, 229, 0.815), rgba
   (0, 215, 226, 0.56)) , url('../images/background.svg'); */
@@ -29,7 +30,7 @@ body {
 }
 
 main {
-  background-color: #e6e8ea;
+  background-color: var(--terciary-color);
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -66,7 +67,7 @@ main {
   }
 
   .right-content {
-    background-color: #e6e8ea;
+    background-color: var(--terciary-color);
     flex-grow: 1;
     margin-left: 280px;
 
