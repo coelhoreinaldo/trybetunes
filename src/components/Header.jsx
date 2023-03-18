@@ -39,8 +39,15 @@ class Header extends Component {
           </Link>
         </nav>
         <img src={ logo } alt="trybe-logo" />
-        <h4 data-testid="header-user-name">{userInfo.name}</h4>
-        {loading && <Loading />}
+        {loading ? (
+          <Loading />
+        ) : (
+          <h4
+            className="header-user-name"
+            data-testid="header-user-name"
+          >
+            {userInfo.name}
+          </h4>)}
       </header>
     );
   }
