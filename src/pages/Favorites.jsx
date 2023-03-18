@@ -31,7 +31,7 @@ class Favorites extends Component {
         <Header />
         <div className="right-content">
           <Topbar>
-            <h1>Favorites</h1>
+            <h1>Favoritas</h1>
           </Topbar>
           <section className="song-list">
 

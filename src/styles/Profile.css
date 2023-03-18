@@ -1,0 +1,5 @@
+.profile-page .user-image, .profile-page .loading-text {
+  max-width: 160px;
+  min-height: 160px;
+  width: 100%;
+}
