@@ -116,6 +116,17 @@ main {
 
   /* testes */
 
+  /* .header {
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+    max-width: 280px;
+    height: unset;
+    position: relative;
+    min-height: 0;
+    width: 100%;
+  } */
+
   /* main {
     display: grid;
     flex-direction: unset;
