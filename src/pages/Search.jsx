@@ -37,7 +37,8 @@ class Search extends Component {
     }
   };
 
-  searchArtistBtn = async () => {
+  searchArtistBtn = async (event) => {
+    event.preventDefault();
     const { searchArtistInput } = this.state;
     this.setState({ loading: true });
     const response = await searchAlbumsAPI(searchArtistInput);
@@ -58,7 +59,7 @@ class Search extends Component {
     return (
       <main data-testid="page-search" className="search-container">
         <Header />
-        <form className="right-content">
+        <form className="right-content" onSubmit={ this.searchArtistBtn }>
           <Topbar>
             <label>
               <input
@@ -70,10 +71,9 @@ class Search extends Component {
               />
             </label>
             <button
-              type="button"
+              type="submit"
               data-testid="search-artist-button"
               disabled={ isDisabled }
-              onClick={ this.searchArtistBtn }
             >
               Pesquisar
             </button>
