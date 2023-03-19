@@ -32,7 +32,7 @@
 
 .song-list {
   align-items: center;
-  background-color: #e6e8ea;
+  background-color: var(--terciary-color);
   display: flex;
   flex-flow: column wrap;
   margin-top: 72px;

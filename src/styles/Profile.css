@@ -1,0 +1,60 @@
+.profile-page .user-image, .profile-page .right-content .loading-text {
+  margin-bottom: -144px;
+  min-height: 190px;
+}
+
+.profile-page .user-image, .profile-edit-page .user-image {
+  border-radius: 50%;
+  box-shadow: 2px 2px 8px gray , 2px 2px 2px gray;
+  max-width: 190px;
+}
+
+.profile-page .right-content {
+  padding-bottom: 64px;
+}
+
+.profile-page .user-data {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  margin: 104px auto 24px;
+  max-width: 260px;
+  width: 100%;
+}
+
+.profile-page .user-data .user-infos {
+  font-weight: 700;
+}
+
+.profile-page .user-data .user-description {
+  text-align: justify;
+}
+
+.profile-page .edit-profile-link {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 100px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  margin: 0 auto 90px;
+  max-width: max-content;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 300ms;
+}
+
+@media only screen and ( min-width : 768px ) {
+
+  .profile-page .user-image {
+    max-width: 260px;
+  }
+
+  .profile-page .user-data {
+    margin-top: 144px;
+    max-width: 400px;
+  }
+}

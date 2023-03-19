@@ -38,9 +38,25 @@ class Header extends Component {
             <ion-icon className="nav-ion" name="person-outline" />
           </Link>
         </nav>
-        <img src={ logo } alt="trybe-logo" />
-        <h4 data-testid="header-user-name">{userInfo.name}</h4>
-        {loading && <Loading />}
+        <img className="logo" src={ logo } alt="trybe-logo" />
+        {loading ? (
+          <Loading />
+        ) : (
+          <div className="header-user-info">
+            <h4
+              className="header-user-name"
+              data-testid="header-user-name"
+            >
+              {userInfo.name}
+              {userInfo.image && <img
+                className="header-user-image"
+                src={ userInfo.image }
+                alt={ userInfo.name }
+              /> }
+
+            </h4>
+          </div>
+        )}
       </header>
     );
   }
