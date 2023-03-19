@@ -52,7 +52,6 @@ main {
 }
 
 .loading-text {
-  animation: alternate;
   text-align: center;
   transition: 300ms;
 }
