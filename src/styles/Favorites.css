@@ -1,3 +1,20 @@
 .page-favorites .song-list {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   margin-top: 16px;
+  min-height: 100vh;
+}
+
+.page-favorites .song-list h2 {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+
+@media only screen and ( min-width : 768px ) {
+
+  .page-favorites .song-list {
+    min-height: unset;
+  }
 }

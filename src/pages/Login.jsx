@@ -75,9 +75,9 @@ class Login extends Component {
               Entrar
 
             </button>
-            {loading && <Loading />}
             {logged && <Redirect to="/search" />}
           </fieldset>
+          {loading && <Loading />}
         </form>
       </div>
     );

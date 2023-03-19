@@ -42,6 +42,7 @@ class MusicCard extends Component {
     return (
       <section className="track-player">
         <div>
+          {/* <p className="song-name"><em>{artistName}</em></p> */}
           <h2 className="song-name">{trackName}</h2>
           <div>
             <audio data-testid="audio-component" src={ previewUrl } controls>
@@ -69,9 +70,11 @@ class MusicCard extends Component {
 }
 MusicCard.defaultProps = {
   handleRemoveFavorite: null,
+  // artistName: undefined,
 };
 
 MusicCard.propTypes = {
+  // artistName: PropTypes.string,
   song: PropTypes.shape({
     trackName: PropTypes.string.isRequired,
     previewUrl: PropTypes.string.isRequired,
