@@ -52,8 +52,21 @@ main {
 }
 
 .loading-text {
+  animation: loading 1s linear infinite;
+  animation-delay: 400ms;
   text-align: center;
-  transition: 300ms;
+
+}
+
+@keyframes loading {
+
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media only screen and ( min-width : 768px ) {
