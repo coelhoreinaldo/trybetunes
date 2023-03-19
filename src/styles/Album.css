@@ -92,6 +92,10 @@
   color: red;
 }
 
+audio::-webkit-media-controls-panel {
+  background-color: #0084ff45;
+}
+
 @media only screen and ( min-width : 768px ) {
 
   .page-album .top-bar .album-artwork {
@@ -133,7 +137,7 @@
     display: flex;
     font-size: 16px;
     font-weight: 500;
-    width: 144px;
+    width: 260px;
   }
 
   .track-player audio {

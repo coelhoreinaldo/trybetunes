@@ -34,12 +34,14 @@ class Favorites extends Component {
             <h1>Favoritas</h1>
           </Topbar>
           <section className="song-list">
-
-            {favoriteSongs.map((song) => (<MusicCard
-              key={ song.trackId }
-              song={ song }
-              handleRemoveFavorite={ this.getFavoriteSongs }
-            />))}
+            {favoriteSongs.map((song) => (
+              <MusicCard
+                key={ song.trackId }
+                song={ song }
+                handleRemoveFavorite={ this.getFavoriteSongs }
+                // artistName={ song.artistName }
+              />
+            ))}
             {loading && <Loading />}
           </section>
         </div>
