@@ -58,6 +58,8 @@ class Login extends Component {
                 data-testid="login-name-input"
                 onChange={ this.handleUsernameChange }
                 placeholder="qual é o seu nome?"
+                maxLength="20"
+
               />
             </label>
             <button
