@@ -81,7 +81,7 @@ class ProfileEdit extends Component {
           </Topbar>
           <fieldset className="profile-edit-inputs">
             <label htmlFor="nameInput">
-              Diga-nos seu nome.
+              <b>Diga-nos seu nome.</b>
               <input
                 className="edit-input-field"
                 type="text"
@@ -91,10 +91,11 @@ class ProfileEdit extends Component {
                 onChange={ this.handleChange }
                 data-testid="edit-input-name"
                 placeholder="Diga-nos seu nome"
+                required
               />
             </label>
             <label htmlFor="emailInput">
-              Qual o seu email?
+              <b>Qual o seu email?</b>
               <input
                 className="edit-input-field"
                 type="email"
@@ -107,7 +108,7 @@ class ProfileEdit extends Component {
               />
             </label>
             <label htmlFor="descriptionInput">
-              Escreva sobre você...
+              <b>Escreva sobre você...</b>
               <textarea
                 className="edit-input-field"
                 type="text"
@@ -121,7 +122,7 @@ class ProfileEdit extends Component {
                 maxLength="120"
               />
             </label>
-            Cole a URL de uma imagem.
+            <b>Cole a URL de uma imagem.</b>
             <label htmlFor="imageInput">
               <input
                 className="edit-input-field"
