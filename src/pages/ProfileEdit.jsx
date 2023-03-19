@@ -120,7 +120,7 @@ class ProfileEdit extends Component {
                 data-testid="edit-input-description"
                 placeholder="Escreva sobre você..."
                 rows="4"
-                maxLength="120"
+                maxLength="326"
               />
             </label>
             <b>Cole a URL de uma imagem.</b>

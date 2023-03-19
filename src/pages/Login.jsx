@@ -36,6 +36,10 @@ class Login extends Component {
     }
   };
 
+  handleSubmitDefault = (event) => {
+    event.preventDefault();
+  };
+
   loginBtn = async (user) => {
     this.setState({ loading: true });
     await createUser(user);
@@ -47,7 +51,7 @@ class Login extends Component {
     const user = { name: userName };
     return (
       <div data-testid="page-login" className="form-container">
-        <form className="login-form">
+        <form className="login-form" onSubmit={ this.handleSubmitDefault }>
           <img src={ logo } alt="logo" />
           <fieldset>
             <label>
@@ -63,7 +67,7 @@ class Login extends Component {
               />
             </label>
             <button
-              type="button"
+              type="submit"
               disabled={ isLoginBtnDisabled }
               data-testid="login-submit-button"
               onClick={ () => this.loginBtn(user) }

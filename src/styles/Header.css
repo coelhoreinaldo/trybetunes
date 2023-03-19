@@ -54,7 +54,7 @@
   box-shadow: 2px 2px 4px gray;
   display: flex;
   flex-direction: row-reverse;
-  max-width: 74px;
+  max-width: fit-content;
   padding: 4px;
 }
 
@@ -87,6 +87,11 @@
     gap: 14px;
     grid-template-columns: auto auto;
     justify-content: flex-start;
+    transition: 300ms;
+  }
+
+  .header .nav-link:hover {
+    color: var(--primary-color);
   }
 
   .header .nav-link span {
