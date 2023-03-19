@@ -52,7 +52,9 @@ main {
 }
 
 .loading-text {
+  animation: alternate;
   text-align: center;
+  transition: 300ms;
 }
 
 @media only screen and ( min-width : 768px ) {

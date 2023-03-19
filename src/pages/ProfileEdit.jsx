@@ -91,6 +91,7 @@ class ProfileEdit extends Component {
                 onChange={ this.handleChange }
                 data-testid="edit-input-name"
                 placeholder="Diga-nos seu nome"
+                maxLength="20"
                 required
               />
             </label>

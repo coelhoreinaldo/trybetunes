@@ -37,7 +37,7 @@
 }
 
 .header .nav-link ion-icon {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .header .header-user-info, .header .loading-text, .header-user-name {
@@ -49,12 +49,24 @@
 }
 
 .header .header-user-info {
+  background-color: var(--terciary-color);
+  border-radius: 40px;
+  box-shadow: 2px 2px 4px gray;
   display: flex;
+  flex-direction: row-reverse;
+  max-width: 74px;
+  padding: 4px;
+  width: 100%;
 }
 
 .header .header-user-image {
   border-radius: 50%;
-  max-height: 40px;
+  max-height: 32px;
+}
+
+.header .header-user-name {
+  font-size: 14px;
+  font-weight: 300;
 }
 
 
@@ -92,14 +104,17 @@
 
   .header nav {
     flex-direction: column;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     gap: 32px;
     order: 2;
   }
 
-  .header h4 {
-    height: 95px;
+  .header .header-user-info {
+    flex-direction: row;
+    height: fit-content;
+    max-width: fit-content;
     order: 3;
+    width: 100%;
   }
 
   .header .logo {
@@ -109,14 +124,14 @@
 
   .header .header-user-name {
     color: var(--primary-color);
-    font-size: 1.6em;
+    font-size: medium;
     font-weight: 400;
   }
 
   .header .header-user-image {
     border-radius: 50%;
     max-height: unset;
-    max-width: 94px;
+    max-width: 64px;
   }
 
 }

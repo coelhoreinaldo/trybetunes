@@ -48,13 +48,13 @@ class Header extends Component {
               data-testid="header-user-name"
             >
               {userInfo.name}
-              {userInfo.image && <img
-                className="header-user-image"
-                src={ userInfo.image }
-                alt={ userInfo.name }
-              /> }
 
             </h4>
+            {userInfo.image && <img
+              className="header-user-image"
+              src={ userInfo.image }
+              alt={ userInfo.name }
+            /> }
           </div>
         )}
       </header>
