@@ -39,10 +39,6 @@ Projeto construído utilizando React.js.
 
 `npm start`
 
-## 🖼️ Figma
-
-<img src='./src/images/figma.png' alt='figma modelo' />
-
 ## 📝 Nota
 
 <img src='./src/images/grade.png' alt='nota final' />
