@@ -41,7 +41,11 @@ Projeto construído utilizando React.js.
 
 ## 🖼️ Figma
 
+<img src='./src/images/figma.png' alt='figma modelo' />
+
 ## 📝 Nota
+
+<img src='./src/images/grade.png' alt='nota final' />
 
 ## ©️ Copyright
 
