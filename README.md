@@ -1,13 +1,48 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# 🎧 Trybetunes
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+## 📘 Sobre
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+Uma aplicação de música desenvolvida em React.js.
+
+## 🧩 Funcionalidades
+
+- Logar na aplicação através de um nome de usuário;
+- Pesquisar por uma banda ou artista;
+- Visualizar os albums disponíveis;
+- Acessar as músicas de determinado album;
+- Ouvir uma prévia da música;
+- Adicionar uma música aos favoritos;
+- Acessar suas músicas favoritas;
+- Editar seu perfil.
+
+Acesse [aqui](https://coelhoreinaldo.github.io/trybetunes).
+
+## ⚛️ Ferramentas
+
+Projeto construído utilizando React.js.
+
+- React Router;
+- Requisição de API em React;
+- States;
+- Props;
+- Forms em React;
+- Metodologia TDD (Test Driven Development).
+- Mobile First;
+
+## 🛠️ Como executar o projeto?
+
+1. Instalando dependências
+
+`npm install`
+
+2. Executando a aplicação
+
+`npm start`
+
+## 🖼️ Figma
+
+## 📝 Nota
+
+## ©️ Copyright
+
+- Logo "Trybetunes" e Figma - Direitos reservados à Trybe.
