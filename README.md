@@ -45,4 +45,4 @@ Projeto construído utilizando React.js.
 
 ## ©️ Copyright
 
-- Logo "Trybetunes" e Figma - Direitos reservados à Trybe.
+- Logo "Trybetunes" - Direitos reservados à Trybe.
