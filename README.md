@@ -1,5 +1,7 @@
 # 🎧 Trybetunes
 
+<img src='./src/images/trybetunes1.png' alt='trybetunes página inicial' />
+
 ## 📘 Sobre
 
 Uma aplicação de música desenvolvida em React.js.
