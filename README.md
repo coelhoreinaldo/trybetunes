@@ -4,7 +4,7 @@
 
 ## 📘 Sobre
 
-Uma aplicação de música desenvolvida em React.js.
+Uma aplicação em que consumo a API do iTunes e renderizo alguns elementos na tela usando React.js.
 
 ## 🧩 Funcionalidades
 
